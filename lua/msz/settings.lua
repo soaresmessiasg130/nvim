@@ -42,7 +42,11 @@ o.splitright = true
 o.splitbelow = true
 o.inccommand = "split"
 
+-- editorconfig
+o.editorconfig = true
+
 -- others
+o.fileformat = "unix"
 o.encoding = "UTF-8"
 o.mouse = "a"
 o.ttimeoutlen = 0
