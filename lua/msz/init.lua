@@ -1,2 +1,3 @@
-require("msz.remap")
+require("msz.settings")
 require("msz.plugins")
+
