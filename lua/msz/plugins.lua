@@ -25,6 +25,8 @@ return require('packer').startup(function(use)
     end,
   }
 
+  use ('nvim-treesitter/playground')
+
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
 
   -- Statusline
@@ -112,4 +114,7 @@ return require('packer').startup(function(use)
       vim.cmd('colorscheme rose-pine')
     end,
   })
+
+  -- Undotree
+  use('mbbill/undotree')
 end)

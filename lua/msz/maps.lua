@@ -46,3 +46,6 @@ map("n", "<C-Left>", "<C-w><")
 map("n", "<C-Right>", "<C-w>>")
 map("n", "<C-Up>", "<C-w>+")
 map("n", "<C-Down>", "<C-w>-")
+
+-- Undotree
+map("n", "<leader>u", "<CMD>UndotreeToggle<CR>")
