@@ -103,4 +103,13 @@ return require('packer').startup(function(use)
 
   -- EditorConfig
   use "editorconfig/editorconfig-vim"
+
+  -- Rose pine theme
+  use({
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    config = function()
+      vim.cmd('colorscheme rose-pine')
+    end,
+  })
 end)
