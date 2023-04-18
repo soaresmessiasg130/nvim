@@ -117,4 +117,7 @@ return require('packer').startup(function(use)
 
   -- Undotree
   use('mbbill/undotree')
+
+  -- Fugitive
+  use('tpope/vim-fugitive')
 end)

@@ -35,6 +35,8 @@ ts.setup({
 	autotag = { enable = true },
 	incremental_selection = { enable = true },
 	indent = { enable = true },
+  sync_install = { enable = false },
+  auto_install = { enable = true },
 })
 
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()

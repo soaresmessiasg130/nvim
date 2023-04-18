@@ -49,3 +49,6 @@ map("n", "<C-Down>", "<C-w>-")
 
 -- Undotree
 map("n", "<leader>u", "<CMD>UndotreeToggle<CR>")
+
+-- Fugitive
+map("n", "<leader>gs", "<CMD>Git<CR>")
