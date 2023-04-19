@@ -15,6 +15,10 @@ else
   print("Telescope not found")
 end
 
+-- Custom
+map("n", "<C-z>", "u")
+map("n", "<C-s", "<CMD>w<CR>")
+
 -- Windows
 map("n", "<leader>]", "<CMD>vsplit<CR>")
 map("n", "<leader>[", "<CMD>split<CR>")
