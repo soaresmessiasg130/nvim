@@ -6,11 +6,16 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "onelight",
+		theme = "onedark",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
-			statusline = {},
+			statusline = { 
+        'packer', 
+        'neo-tree', 
+        'undotree', 
+        'diff' 
+      },
 			winbar = {},
 		},
 		ignore_focus = {},

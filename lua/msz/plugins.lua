@@ -34,7 +34,7 @@ return require('packer').startup(function(use)
     "nvim-lualine/lualine.nvim",
     event = "BufEnter",
     config = function()
-    require("msz.configs.lualine")
+      require("msz.configs.lualine")
     end,
     requires = { "nvim-web-devicons" },
   })
@@ -55,7 +55,7 @@ return require('packer').startup(function(use)
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     config = function()
-    require("msz.configs.cmp")
+      require("msz.configs.cmp")
     end,
   })
 
