@@ -25,6 +25,7 @@ ts.setup({
 		"css",
 		"html",
 		"lua",
+    "bash",
 	},
 	rainbow = {
 		enable = true,
@@ -35,7 +36,7 @@ ts.setup({
 	autotag = { enable = true },
 	incremental_selection = { enable = true },
 	indent = { enable = true },
-  sync_install = { enable = false },
+  sync_install = { enable = true },
   auto_install = { enable = true },
 })
 
