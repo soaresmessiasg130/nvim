@@ -1,6 +1,10 @@
 enum Animal {
     Dog,
 
+
+
+
+
     Cat,
 }
 
