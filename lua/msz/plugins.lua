@@ -26,6 +26,8 @@ return require('packer').startup(function(use)
   use('L3MON4D3/LuaSnip')
   use('rafamadriz/friendly-snippets')
   use('williamboman/mason.nvim')
+  use('mfussenegger/nvim-dap')
+  use('rcarriga/cmp-dap')
 
   use {
     'nvim-treesitter/nvim-treesitter',
