@@ -35,7 +35,7 @@ lsp.format_on_save({
   ['html'] = { 'html' },
   ['jsonls'] = { 'json', 'jsonc' },
   ['lua_ls'] = { 'lua' },
-  ['omnisharp'] = { 'cs' },
+  ['omnisharp'] = { 'cs', 'csproj', 'sln' },
   ['pyright'] = { 'py' },
   ['rust_analyzer'] = { 'rs' },
   ['tailwindcss'] = { 'css', 'html' },

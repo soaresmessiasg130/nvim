@@ -1,3 +1,8 @@
+
+
+
+
+
 const MyComponent = () => {
   const travel: TravelDto = {} as TravelDto
 
@@ -10,3 +15,9 @@ export class TravelDto {
   status: boolean
   start: Date | string | undefined
 }
+
+function teste(a: number, b: number) {
+  return a + b
+}
+
+teste(1, 2)
