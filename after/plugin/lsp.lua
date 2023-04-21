@@ -5,12 +5,7 @@ local lsp = require('lsp-zero').preset({
   suggest_lsp_servers = false,
 })
 
-lsp.on_attach(function(client, bufnr)
-  lsp.buffer_autoformat()
-  lsp.default_keymaps({ buffer = bufnr })
-end)
-
-lsp.ensure_installed({
+local servers = {
   'cssls',
   'eslint',
   'html',
@@ -22,11 +17,21 @@ lsp.ensure_installed({
   'tailwindcss',
   'tsserver',
   'jdtls',
-})
+}
 
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+local on_attach = function(_, bufnr)
+  lsp.buffer_autoformat()
+  lsp.default_keymaps({ buffer = bufnr })
+end
+
+lsp.on_attach = on_attach
+lsp.capabilities = capabilities
+lsp.ensure_installed(servers)
 lsp.format_on_save({
   ['cssls'] = { 'css' },
-  ['eslint'] = { 'js', 'jsx', 'ts', 'tsx' },
+  ['eslint'] = { 'js', 'jsx', 'ts', 'd.ts', 'tsx' },
   ['html'] = { 'html' },
   ['jsonls'] = { 'json', 'jsonc' },
   ['lua_ls'] = { 'lua' },
@@ -34,7 +39,7 @@ lsp.format_on_save({
   ['pyright'] = { 'py' },
   ['rust_analyzer'] = { 'rs' },
   ['tailwindcss'] = { 'css', 'html' },
-  ['tsserver'] = { 'ts', 'tsx' },
+  ['tsserver'] = { 'ts', 'd.ts', 'tsx' },
   ['jdtls'] = { 'java' },
 })
 
