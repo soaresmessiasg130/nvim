@@ -10,11 +10,17 @@ lualine.setup({
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
-			statusline = { 
-        'packer', 
-        'neo-tree', 
-        'undotree', 
-        'diff' 
+			statusline = {
+        'packer',
+        'neo-tree',
+        'undotree',
+        'diff',
+        'dap-repl',
+        'dapui_scopes',
+        'dapui_breakpoints',
+        'dapui_watches',
+        'dapui_stacks',
+        'dapui_console',
       },
 			winbar = {},
 		},
