@@ -16,7 +16,6 @@ local servers = {
   'rust_analyzer',
   'tailwindcss',
   'tsserver',
-  'jdtls',
 }
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -40,7 +39,6 @@ lsp.format_on_save({
   ['rust_analyzer'] = { 'rs' },
   ['tailwindcss'] = { 'css', 'html' },
   ['tsserver'] = { 'ts', 'd.ts', 'tsx' },
-  ['jdtls'] = { 'java' },
 })
 
 lsp.setup()
