@@ -26,7 +26,8 @@ dap_ui.setup({
     max_type_length = nil, -- Can be integer or nil.
     max_value_lines = 100, -- Can be integer or nil.
     max_value_columns = 80, -- Can be integer or nil.
-  }
+  },
+  expand_lines = false,
 })
 
 dap.listeners.after.event_initialized['dapui_config'] = function ()
