@@ -16,8 +16,21 @@ else
 end
 
 -- Custom
-map("n", "<C-z>", "u")
-map("n", "<C-s", "<CMD>w<CR>")
+map("n", "<C-s>", "<CMD>w<CR>")
+map("n", "<leader><C-s>", "<CMD>wa<CR>")
+map("n", "<C-z>", "<CMD>u<CR>")
+
+map("i", "<C-s>", "<CMD>w<CR>")
+map("i", "<leader><C-s>", "<CMD>wa<CR>")
+map("i", "<C-z>", "<CMD>u<CR>")
+
+-- DapUI
+map("n", "<F5>", "<CMD>DapContinue<CR>")
+map("n", "<F6>", "<CMD>DapStepInto<CR>")
+map("n", "<F7>", "<CMD>DapStepOut<CR>")
+map("n", "<F8>", "<CMD>DapStepOver<CR>")
+map("n", "<F9>", "<CMD>DapTerminate<CR>")
+map("n", "<leader>b", "<CMD>DapToggleBreakpoint<CR>")
 
 -- Windows
 map("n", "<leader>]", "<CMD>vsplit<CR>")
@@ -34,6 +47,7 @@ map("n", "<S-TAB>", "<CMD>bprevious<CR>")
 -- Terminal
 map("n", "<leader>th", "<CMD>ToggleTerm size=10 direction=horizontal<CR>")
 map("n", "<leader>tv", "<CMD>ToggleTerm size=40 direction=vertical<CR>")
+map("n", "<leader>tt", "<CMD>ToggleTermToggleAll<CR>")
 
 -- Markdown Preview
 map("n", "<leader>m", "<CMD>MarkdownPreview<CR>")
