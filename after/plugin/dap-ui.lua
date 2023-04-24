@@ -3,10 +3,10 @@ local dap, dap_ui = require('dap'), require("dapui")
 dap_ui.setup({
   layouts = {
     {
-      size = 40,
+      size = 30,
       position = 'right',
       elements = {
-        { id = "repl", size = 0.25 },
+        { id = "repl", size = 0.20 },
         "scopes",
         "watches",
         "breakpoints",
