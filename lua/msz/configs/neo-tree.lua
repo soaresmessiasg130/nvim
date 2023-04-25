@@ -17,6 +17,7 @@ neo_tree.setup({
     use_libuv_file_watcher = true,
   },
   git_status = {
+    use_libuv_file_watcher = true,
     window = {
       position = "float",
       mappings = {
