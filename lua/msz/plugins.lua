@@ -17,7 +17,6 @@ return require('packer').startup(function(use)
   use('nvim-tree/nvim-web-devicons')
   use('nvim-treesitter/playground')
   use('windwp/nvim-ts-autotag')
-  use('editorconfig/editorconfig-vim')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
   use('williamboman/mason-lspconfig.nvim')
@@ -63,6 +62,9 @@ return require('packer').startup(function(use)
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
+    config = function ()
+      require("msz.configs.neo-tree")
+    end
   })
 
   use({

@@ -39,6 +39,7 @@ map("n", "<leader>[", "<CMD>split<CR>")
 -- NeoTree
 map("n", "<leader>e", "<CMD>Neotree toggle<CR>")
 map("n", "<leader>o", "<CMD>Neotree focus<CR>")
+map("n", "<leader>gs", "<CMD>Neotree toggle right git_status<CR>")
 
 -- Buffer
 map("n", "<TAB>", "<CMD>bnext<CR>")
@@ -67,6 +68,3 @@ map("n", "<C-Down>", "<C-w>-")
 
 -- Undotree
 map("n", "<leader>u", "<CMD>UndotreeToggle<CR>")
-
--- Fugitive
-map("n", "<leader>gs", "<CMD>Git<CR>")

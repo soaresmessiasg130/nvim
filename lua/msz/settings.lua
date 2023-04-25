@@ -1,9 +1,10 @@
-local global = vim.g
+local g = vim.g
 local o = vim.o
 
 -- <leader>
-global.mapleader = " "
-global.maplocalleader = " "
+g.mapleader = " "
+g.maplocalleader = " "
+g.editorconfig = true
 
 -- line numbers
 o.number = true
@@ -54,9 +55,6 @@ o.clipboard = "unnamedplus"
 o.splitright = true
 o.splitbelow = true
 o.inccommand = "split"
-
--- editorconfig
--- o.editorconfig = true
 
 -- others
 o.swapfile = false
