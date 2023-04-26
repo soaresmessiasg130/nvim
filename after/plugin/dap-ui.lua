@@ -6,12 +6,19 @@ dap_ui.setup({
       size = 30,
       position = 'right',
       elements = {
-        { id = "repl", size = 0.20 },
+        -- { id = "repl", size = 0.20 },
         "scopes",
         "watches",
         "breakpoints",
       },
     },
+    {
+      size = 4,
+      position = "bottom",
+      elements = {
+        "repl",
+      }
+    }
   },
   floating = {
     max_width = 0.25,
