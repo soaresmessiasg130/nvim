@@ -24,6 +24,8 @@ map("i", "<C-s>", "<CMD>w<CR>")
 map("i", "<leader><C-s>", "<CMD>wa<CR>")
 map("i", "<C-z>", "<CMD>u<CR>")
 
+map("n", "<leader>z", "<CMD>set wrap!<CR>")
+
 -- DapUI
 map("n", "<F5>", "<CMD>DapContinue<CR>")
 map("n", "<F6>", "<CMD>DapStepInto<CR>")
