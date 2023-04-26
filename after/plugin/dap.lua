@@ -19,14 +19,14 @@ dap.configurations.cs = {
     type = "coreclr",
     name = "Auth - TripMeeApp-Back",
     request = "launch",
-    args = { "--urls", "https://+:8110" },
+    args = { "--urls", "http://+:8110" },
     program = os.getenv("HOME") .. "/Desktop/TripMeeApp-Back/TripMeeApp.Auth/bin/Debug/net6.0/TripMeeApp.Auth.dll"
   },
   {
     type = "coreclr",
     name = "Apis - TripMeeApp-Back",
     request = "launch",
-    args = { "--urls", "https://+:8120" },
+    args = { "--urls", "http://+:8120" },
     program = os.getenv("HOME") .. "/Desktop/TripMeeApp-Back/TripMeeApp.Apis/bin/Debug/net6.0/TripMeeApp.Apis.dll"
   }
 }
