@@ -19,12 +19,10 @@ end
 map("n", "<C-s>", "<CMD>w<CR>")
 map("n", "<leader><C-s>", "<CMD>wa<CR>")
 map("n", "<C-z>", "<CMD>u<CR>")
+map("n", "<leader>z", "<CMD>set wrap!<CR>")
 
 map("i", "<C-s>", "<CMD>w<CR>")
-map("i", "<leader><C-s>", "<CMD>wa<CR>")
 map("i", "<C-z>", "<CMD>u<CR>")
-
-map("n", "<leader>z", "<CMD>set wrap!<CR>")
 
 -- DapUI
 map("n", "<F5>", "<CMD>DapContinue<CR>")

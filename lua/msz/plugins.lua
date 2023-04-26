@@ -152,6 +152,20 @@ return require('packer').startup(function(use)
     },
   })
 
+  use({
+    'jose-elias-alvarez/null-ls.nvim',
+    config = function ()
+      require('msz.configs.null-ls')
+    end,
+  })
+
+  use({
+    'MunifTanjim/prettier.nvim',
+    config = function ()
+      require('msz.configs.prettier')
+    end
+  })
+
   if packer_bootstrap then
     require("packer").sync()
   end
