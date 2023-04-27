@@ -15,6 +15,7 @@ local servers = {
   'pyright',
   'rust_analyzer',
   'tailwindcss',
+  'tsserver',
 }
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -37,6 +38,7 @@ lsp.format_on_save({
   ['pyright'] = { 'py' },
   ['rust_analyzer'] = { 'rs' },
   ['tailwindcss'] = { 'css', 'html' },
+  ['tsserver'] = { 'js', 'jsx', 'ts', 'd.ts', 'tsx' },
 })
 
 lsp.setup()
