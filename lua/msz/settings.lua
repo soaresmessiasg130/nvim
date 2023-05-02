@@ -46,6 +46,7 @@ o.inccommand = "split"
 o.editorconfig = true
 
 -- others
+o.scrolloff = 8
 o.swapfile = false
 o.fileformat = "unix"
 o.encoding = "UTF-8"
@@ -53,5 +54,5 @@ o.mouse = "a"
 o.ttimeoutlen = 0
 o.wildmenu = true
 o.showcmd = true
-o.updatetime = 4000
+o.updatetime = 500
 o.showmatch = true
