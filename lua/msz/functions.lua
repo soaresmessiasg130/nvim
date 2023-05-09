@@ -47,3 +47,13 @@ function GetLocalFolderName(message)
 
   return string.sub(selected, 4, string.len(selected) - 1)
 end
+
+function BuildDotnetProject(workspace)
+  print("\n\nBuilding: " .. workspace)
+
+  local filename = os.tmpname()
+
+  os.execute("dotnet build > " .. filename)
+
+  print("\nFinish build... File saved: " .. filename)
+end

@@ -20,17 +20,19 @@ dap.configurations.cs = {
     name = "Debug .Net Project",
     request = "launch",
     args = { "--urls", "http://+:8110" },
-    cwd = function()
-      local project = GetLocalFolderName()
-
-      local res = string.format("%s/%s", vim.fn.getcwd(), project)
-
-      return res
-    end,
     program = function()
       local project = GetLocalFolderName()
 
       local res = string.format("%s/%s/bin/Debug/net6.0/%s.dll", vim.fn.getcwd(), project, project)
+
+      BuildDotnetProject(res)
+
+      return res
+    end,
+    cwd = function()
+      local project = GetLocalFolderName()
+
+      local res = string.format("%s/%s", vim.fn.getcwd(), project)
 
       return res
     end,
