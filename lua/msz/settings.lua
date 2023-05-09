@@ -42,9 +42,6 @@ o.splitright = true
 o.splitbelow = true
 o.inccommand = "split"
 
--- editorconfig
-o.editorconfig = true
-
 -- others
 o.scrolloff = 8
 o.swapfile = false
@@ -54,5 +51,5 @@ o.mouse = "a"
 o.ttimeoutlen = 0
 o.wildmenu = true
 o.showcmd = true
-o.updatetime = 500
+o.updatetime = 2000
 o.showmatch = true
