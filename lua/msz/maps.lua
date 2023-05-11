@@ -68,3 +68,6 @@ map("n", "<C-Down>", "<C-w>-")
 
 -- Undotree
 map("n", "<leader>u", "<CMD>UndotreeToggle<CR>")
+
+-- Comment
+map("n", "<C-_>", "<CMD>CommentToggle<CR>")

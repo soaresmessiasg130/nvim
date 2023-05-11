@@ -1,4 +1,4 @@
-local nvim_dap_virtual_text = require('nvim-dap-virtual-text')
+local nvim_dap_virtual_text = require("nvim-dap-virtual-text")
 
 nvim_dap_virtual_text.setup({
   enabled = true,
@@ -9,11 +9,8 @@ nvim_dap_virtual_text.setup({
   commented = false,
   only_first_definition = true,
   all_references = false,
+  virt_text_pos = "eol",
   display_callback = function(variable, _buf, _stackframe, _node)
-    return variable.name .. ' = ' .. variable.value
+    return "@ " .. variable.value
   end,
-  virt_text_pos = 'eol',
-  all_frames = false,
-  virt_lines = false,
-  virt_text_win_col = nil
 })

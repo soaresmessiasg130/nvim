@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/weefor29/.config/nvim/lua/msz'
+let g:netrw_dirhist_5='/home/weefor29/.config/nvim/lua'
+let g:netrw_dirhist_4='/home/weefor29/.config/nvim'
+let g:netrw_dirhist_3='/home/weefor29'
+let g:netrw_dirhist_2='/home/weefor29/.config/nvim'
+let g:netrw_dirhist_1='/home/weefor29/Desktop/TripMeeApp-Back'

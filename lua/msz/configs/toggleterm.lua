@@ -1,19 +1,19 @@
 local status, toggleterm = pcall(require, "toggleterm")
 
 if not status then
-	return
+  return
 end
 
 toggleterm.setup({
-	size = 10,
-	open_mapping = [[<F10>]],
-	shading_factor = 2,
-	direction = "float",
-	float_opts = {
-		border = "curved",
-		highlights = {
-			border = "Normal",
-			background = "Normal",
-		},
-	},
+  size = 10,
+  open_mapping = [[`]],
+  shading_factor = 2,
+  direction = "float",
+  float_opts = {
+    border = "curved",
+    highlights = {
+      border = "Normal",
+      background = "Normal",
+    },
+  },
 })

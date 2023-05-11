@@ -4,6 +4,7 @@
 
 Install Telescope dependencies:
 
+- Install Packer.nvim
 - ripgrep
 - fd-finder
 
