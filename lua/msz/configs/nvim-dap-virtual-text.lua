@@ -11,6 +11,6 @@ nvim_dap_virtual_text.setup({
   all_references = false,
   virt_text_pos = "eol",
   display_callback = function(variable, _buf, _stackframe, _node)
-    return "@ " .. variable.value
+    return " = " .. variable.value
   end,
 })

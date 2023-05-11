@@ -43,7 +43,7 @@ o.splitbelow = true
 o.inccommand = "split"
 
 -- others
-o.scrolloff = 8
+o.scrolloff = 4
 o.swapfile = false
 o.fileformat = "unix"
 o.encoding = "UTF-8"

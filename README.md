@@ -32,3 +32,9 @@ Run :Mason and be sure are installed:
 - tailwindcss-language-server tailwindcss
 - typescript-language-server tsserver
 - stylua
+
+Run:
+
+- :let g:loaded_perl_provider = 0
+- npm install -g neovim
+- npm install -g eslint-cli
