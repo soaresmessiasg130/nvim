@@ -53,12 +53,12 @@ dap.listeners.before.event_exited["dapui_config"] = function()
   dap_ui.close()
 end
 
-vim.api.nvim_set_hl(0, "red", { fg = "#ff4030" })
-vim.api.nvim_set_hl(0, "pink", { fg = "#ffaaaa" })
-vim.api.nvim_set_hl(0, "blue", { fg = "#3d59a1" })
-vim.api.nvim_set_hl(0, "green", { fg = "#9ece6a" })
-vim.api.nvim_set_hl(0, "yellow", { fg = "#FFFF00" })
-vim.api.nvim_set_hl(0, "orange", { fg = "#f09000" })
+vim.api.nvim_set_hl(0, "red", { bg = "none", fg = "#ff4030" })
+vim.api.nvim_set_hl(0, "pink", { bg = "none", fg = "#ffaaaa" })
+vim.api.nvim_set_hl(0, "blue", { bg = "none", fg = "#3d59a1" })
+vim.api.nvim_set_hl(0, "green", { bg = "none", fg = "#9ece6a" })
+vim.api.nvim_set_hl(0, "yellow", { bg = "none", fg = "#FFFF00" })
+vim.api.nvim_set_hl(0, "orange", { bg = "none", fg = "#f09000" })
 
 vim.fn.sign_define("DapBreakpoint", { text = "-", texthl = "red" })
 vim.fn.sign_define("DapBreakpointCondition", { text = "-", texthl = "blue" })

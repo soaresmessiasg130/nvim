@@ -32,6 +32,7 @@ Run :Mason and be sure are installed:
 - tailwindcss-language-server tailwindcss
 - typescript-language-server tsserver
 - stylua
+- rescript-lsp
 
 Run:
 
