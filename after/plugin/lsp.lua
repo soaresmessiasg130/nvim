@@ -1,42 +1,88 @@
 local lsp = require("lsp-zero").preset({
-	name = "minimal",
-	set_lsp_keymaps = true,
-	manage_nvim_cmp = true,
-	suggest_lsp_servers = true,
+  float_border = "rounded",
+  call_servers = "local",
+  configure_diagnostics = true,
+  setup_servers_on_start = true,
+  set_lsp_keymaps = {
+    preserve_mappings = false,
+    omit = {},
+  },
+  manage_nvim_cmp = {
+    set_sources = "recommended",
+    set_basic_mappings = true,
+    set_extra_mappings = false,
+    use_luasnip = true,
+    set_format = true,
+    documentation_window = true,
+  },
 })
 
-local servers = {
-	"cssls",
-	"eslint",
-	"html",
-	"jsonls",
-	"lua_ls",
-	"omnisharp",
-	"pyright",
-	"rust_analyzer",
-	"tailwindcss",
-	"tsserver",
-}
+lsp.on_attach(function(_, bufnr)
+  lsp.default_keymaps({ buffer = bufnr })
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+  lsp.buffer_autoformat()
+end)
 
-local on_attach = function(_, bufnr)
-	lsp.buffer_autoformat()
-	lsp.default_keymaps({ buffer = bufnr })
-end
+lsp.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-lsp.on_attach = on_attach
-lsp.capabilities = capabilities
-lsp.ensure_installed(servers)
+lsp.ensure_installed({
+  "cssls",
+  "eslint",
+  "html",
+  "jsonls",
+  "lua_ls",
+  "omnisharp",
+  "pyright",
+  "rust_analyzer",
+  "tailwindcss",
+  "tsserver",
+})
+
 lsp.format_on_save({
-	["omnisharp"] = { "cs", "csproj", "sln" },
-	["cssls"] = { "css" },
-	["eslint"] = { "js", "jsx", "ts", "d.ts", "tsx" },
-	["html"] = { "html" },
-	["jsonls"] = { "json", "jsonc" },
-	["lua_ls"] = { "lua" },
-	["pyright"] = { "py" },
-	["rust_analyzer"] = { "rs" },
-	["tailwindcss"] = { "css", "html" },
-	["tsserver"] = { "js", "jsx", "ts", "d.ts", "tsx" },
+  format_opts = {
+    async = false,
+    timeout_ms = 10000,
+  },
+  servers = {
+    ["omnisharp"] = { "cs", "csproj", "sln" },
+    ["cssls"] = { "css" },
+    ["eslint"] = { "js", "jsx", "ts", "d.ts", "tsx" },
+    ["html"] = { "html" },
+    ["jsonls"] = { "json", "jsonc" },
+    ["lua_ls"] = { "lua" },
+    ["pyright"] = { "py" },
+    ["rust_analyzer"] = { "rs" },
+    ["tailwindcss"] = { "css", "html" },
+    ["tsserver"] = { "js", "jsx", "ts", "d.ts", "tsx" },
+  },
 })
+
+lsp.set_sign_icons({
+  error = "✘",
+  warn = "▲",
+  hint = "⚑",
+  info = "»",
+})
+
+lsp.omnifunc.setup({
+  autocomplete = true,
+  tabcomplete = true,
+  use_fallback = true,
+  update_on_delete = true,
+  verbose = true,
+  trigger = "<C-Space>",
+})
+
+lsp.set_server_config({
+  single_file_support = false,
+  capabilities = {
+    textDocument = {
+      foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true,
+      },
+    },
+  },
+})
+
+lsp.setup()
