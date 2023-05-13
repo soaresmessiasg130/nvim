@@ -22,7 +22,7 @@ prettier.setup({
         check_package_json = true,
       })
     end,
-    runtime_condition = function(params)
+    runtime_condition = function(_)
       return true
     end,
     timeout = 5000,

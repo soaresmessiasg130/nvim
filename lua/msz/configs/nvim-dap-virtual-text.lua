@@ -10,7 +10,7 @@ nvim_dap_virtual_text.setup({
   only_first_definition = true,
   all_references = false,
   virt_text_pos = "eol",
-  display_callback = function(variable, _buf, _stackframe, _node)
+  display_callback = function(variable, _, _, _)
     return " = " .. variable.value
   end,
 })

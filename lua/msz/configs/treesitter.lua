@@ -1,43 +1,42 @@
-local status, ts = pcall(require, "nvim-treesitter.configs")
-if not status then
-	return
-end
+local treesitter = require("nvim-treesitter.configs")
 
-ts.setup({
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = false,
-	},
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
-	},
-	ensure_installed = {
-		"markdown",
-		"tsx",
-		"typescript",
-		"javascript",
-		"toml",
-		"c_sharp",
-		"json",
-		"yaml",
-		"rust",
-		"css",
-		"html",
-		"lua",
+treesitter.setup({
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+  incremental_selection = {
+    enable = true,
+  },
+  text_objects = {
+    enable = true,
+  },
+  indent = {
+    enable = true,
+  },
+  ensure_installed = {
+    "markdown",
+    "tsx",
+    "typescript",
+    "javascript",
+    "toml",
+    "c_sharp",
+    "json",
+    "yaml",
+    "rust",
+    "css",
+    "html",
+    "lua",
     "bash",
-	},
-	rainbow = {
-		enable = true,
-		disable = { "html" },
-		extended_mode = false,
-		max_file_lines = nil,
-	},
-	autotag = { enable = true },
-	incremental_selection = { enable = true },
-	indent = { enable = true },
-  sync_install = { enable = true },
-  auto_install = { enable = true },
+  },
+  rainbow = {
+    enable = true,
+    disable = { "html" },
+    extended_mode = false,
+    max_file_lines = nil,
+  },
 })
 
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()

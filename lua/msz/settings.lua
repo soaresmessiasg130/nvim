@@ -29,7 +29,8 @@ o.syntax = "on"
 o.ruler = true
 o.title = true
 o.hidden = true
-o.iskeyword = "-"
+-- o.iskeyword = "-"
+vim.opt.iskeyword:append("-")
 
 -- backspace
 o.backspace = "indent,eol,start"
@@ -43,12 +44,11 @@ o.splitbelow = true
 o.inccommand = "split"
 
 -- others
-o.scrolloff = 4
+o.scrolloff = 3
 o.swapfile = false
-o.fileformat = "unix"
-o.encoding = "UTF-8"
+o.fileencodings = "utf-8,ucs-bom,latin1"
 o.mouse = "a"
-o.ttimeoutlen = 0
+o.timeoutlen = 500
 o.wildmenu = true
 o.showcmd = true
 o.updatetime = 2000
