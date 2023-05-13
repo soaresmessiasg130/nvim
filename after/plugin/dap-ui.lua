@@ -6,7 +6,6 @@ dap_ui.setup({
       size = 30,
       position = "right",
       elements = {
-        -- { id = "repl", size = 0.20 },
         "scopes",
         "watches",
         "breakpoints",
@@ -36,9 +35,9 @@ dap_ui.setup({
   },
   expand_lines = false,
   icons = {
-    collapsed = "",
-    current_frame = "",
-    expanded = "",
+    collapsed = ">",
+    current_frame = ">",
+    expanded = "<",
   },
 })
 
