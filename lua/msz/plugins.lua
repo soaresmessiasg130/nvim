@@ -19,14 +19,14 @@ return require("packer").startup(function(use)
   use("windwp/nvim-ts-autotag")
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
-  use("williamboman/mason-lspconfig.nvim")
-  use("neovim/nvim-lspconfig")
   use("hrsh7th/cmp-nvim-lsp")
   use("L3MON4D3/LuaSnip")
   use("rafamadriz/friendly-snippets")
-  use("williamboman/mason.nvim")
   use("mfussenegger/nvim-dap")
   use("rcarriga/cmp-dap")
+  use("williamboman/mason.nvim")
+  use("williamboman/mason-lspconfig.nvim")
+  use("neovim/nvim-lspconfig")
 
   use({
     "nvim-treesitter/nvim-treesitter",

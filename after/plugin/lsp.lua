@@ -35,8 +35,6 @@ lsp.ensure_installed({
   "rust_analyzer",
   "tailwindcss",
   "tsserver",
-  -- "omnisharp",
-  -- "csharp_ls",
 })
 
 lsp.format_on_save({
@@ -45,8 +43,6 @@ lsp.format_on_save({
     timeout_ms = 10000,
   },
   servers = {
-    -- ["omnisharp"] = { "cs", "csproj", "sln" },
-    -- ["csharp_ls"] = { "cs", "csproj", "sln" },
     ["cssls"] = { "css" },
     ["eslint"] = { "js", "jsx", "ts", "d.ts", "tsx" },
     ["html"] = { "html" },
