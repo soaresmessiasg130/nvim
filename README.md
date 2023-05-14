@@ -25,7 +25,7 @@ Run :Mason and be sure are installed:
 - json-lsp jsonls
 - lua-language-server lua_ls
 - netcoredbg 
-- omnisharp 
+- omnisharp@v1.38.0
 - prettier 
 - pyright 
 - rust-analyzer rust_analyzer

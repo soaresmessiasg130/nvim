@@ -35,6 +35,7 @@ lsp.ensure_installed({
   "rust_analyzer",
   "tailwindcss",
   "tsserver",
+  "omnisharp",
 })
 
 lsp.format_on_save({
@@ -52,6 +53,7 @@ lsp.format_on_save({
     ["rust_analyzer"] = { "rs" },
     ["tailwindcss"] = { "css", "html" },
     ["tsserver"] = { "js", "jsx", "ts", "d.ts", "tsx" },
+    ["omnisharp"] = { "cs", "csproj", "sln" },
   },
 })
 
@@ -63,7 +65,6 @@ lsp.set_sign_icons({
 })
 
 lsp.omnifunc.setup({
-  autocomplete = true,
   tabcomplete = true,
   use_fallback = true,
   update_on_delete = true,
