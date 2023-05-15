@@ -17,7 +17,7 @@ rose_pine.setup({
     background_nc = "none",
     panel = "none",
     panel_nc = "none",
-    border = "highlight_low",
+    border = "none",
     comment = "muted",
     link = "foam",
     punctuation = "text",

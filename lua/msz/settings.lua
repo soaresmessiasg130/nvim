@@ -29,7 +29,6 @@ o.syntax = "on"
 o.ruler = true
 o.title = true
 o.hidden = true
--- o.iskeyword = "-"
 vim.opt.iskeyword:append("-")
 
 -- backspace
@@ -46,7 +45,9 @@ o.inccommand = "split"
 -- others
 o.scrolloff = 3
 o.swapfile = false
-o.fileencodings = "utf-8,ucs-bom,latin1"
+o.encoding = "utf-8"
+o.fileencoding = "utf-8"
+o.termencoding = "utf-8"
 o.mouse = "a"
 o.ttimeoutlen = 0
 o.wildmenu = true

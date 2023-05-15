@@ -9,7 +9,7 @@ local lsp = require("lsp-zero").preset({
   },
   manage_nvim_cmp = {
     set_sources = "recommended",
-    set_basic_mappings = true,
+    set_basic_mappings = false,
     set_extra_mappings = false,
     use_luasnip = true,
     set_format = true,
@@ -41,7 +41,7 @@ lsp.ensure_installed({
 lsp.format_on_save({
   format_opts = {
     async = false,
-    timeout_ms = 10000,
+    timeout_ms = 1000,
   },
   servers = {
     ["cssls"] = { "css" },
@@ -64,14 +64,6 @@ lsp.set_sign_icons({
   info = "»",
 })
 
-lsp.omnifunc.setup({
-  tabcomplete = true,
-  use_fallback = true,
-  update_on_delete = true,
-  verbose = true,
-  trigger = "<C-Space>",
-})
-
 lsp.set_server_config({
   single_file_support = false,
   capabilities = {
@@ -83,5 +75,7 @@ lsp.set_server_config({
     },
   },
 })
+
+require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()

@@ -1,7 +1,7 @@
-local cmp = require('cmp')
+local cmp = require("cmp")
 
-require('luasnip.loaders.from_vscode').lazy_load()
-require('cmp-npm').setup({})
+require("luasnip.loaders.from_vscode").lazy_load()
+require("cmp-npm").setup({})
 
 cmp.setup({
   mapping = cmp.mapping.preset.insert({
@@ -19,13 +19,12 @@ cmp.setup({
       require("luasnip").lsp_expand(args.body)
     end,
   },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
   sources = cmp.config.sources({
-    { name = "nvim_lsp" },
-    { name = 'luasnip' },
-    { name = 'nvim-lsp-document-symbol' },
-    { name = 'nvim-lsp-signature-help' },
-    { name = 'async-path' },
-    { name = 'npm', keyword_length = 3 },
+    { name = "luasnip" },
   }, {
     { name = "buffer" },
   }),
