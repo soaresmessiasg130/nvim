@@ -176,6 +176,51 @@ return require("packer").startup(function(use)
     end,
   })
 
+  use({
+    "tanvirtin/vgit.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("vgit").setup()
+    end,
+  })
+
+  use({
+    "akinsho/git-conflict.nvim",
+    tag = "*",
+    config = function()
+      require("git-conflict").setup()
+    end,
+  })
+
+  use({
+    "karb94/neoscroll.nvim",
+    config = function()
+      require("neoscroll").setup({
+        hide_cursor = true,
+        stop_eof = true,
+        performance_mode = false,
+      })
+    end,
+  })
+
+  use({
+    "utilyre/sentiment.nvim",
+    tag = "*",
+    config = function()
+      require("sentiment").setup({
+        delay = 50,
+        limit = 500,
+        pairs = {
+          { "{", "}" },
+          { "[", "]" },
+          { "(", ")" },
+        },
+      })
+    end,
+  })
+
   if packer_bootstrap then
     require("packer").sync()
   end

@@ -35,7 +35,7 @@ lsp.ensure_installed({
   "rust_analyzer",
   "tailwindcss",
   "tsserver",
-  "omnisharp",
+  "omnisharp@v1.38.2",
 })
 
 lsp.format_on_save({

@@ -2,7 +2,7 @@
 
 ## Installation
 
-Install Telescope dependencies:
+Install dependencies:
 
 - Install Packer.nvim
 - ripgrep

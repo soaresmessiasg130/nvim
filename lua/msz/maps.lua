@@ -71,3 +71,9 @@ map("n", "<leader>u", "<CMD>UndotreeToggle<CR>")
 
 -- Comment
 map("n", "<C-_>", "<CMD>CommentToggle<CR>")
+
+-- Neogit
+map("n", "<leader>ng", "<CMD>Neogit kind=split<CR>")
+
+-- VGit
+map("n", "<leader>nd", "<CMD>VGit project_diff_preview<CR>")
