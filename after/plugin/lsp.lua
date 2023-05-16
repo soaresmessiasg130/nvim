@@ -76,6 +76,14 @@ lsp.set_server_config({
   },
 })
 
+lsp.omnifunc.setup({
+  autocomplete = true,
+  tabcomplete = true,
+  use_fallback = true,
+  update_on_delete = true,
+  trigger = "<C-Space>",
+})
+
 require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()

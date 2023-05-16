@@ -24,6 +24,8 @@ map("n", "<leader>z", "<CMD>set wrap!<CR>")
 map("i", "<C-s>", "<CMD>w<CR>")
 map("i", "<C-z>", "<CMD>u<CR>")
 
+map("n", "<leader><leader>", "<CMD>lua vim.lsp.buf.code_action()<CR>")
+
 -- DapUI
 map("n", "<F5>", "<CMD>DapContinue<CR>")
 map("n", "<F6>", "<CMD>DapStepInto<CR>")
