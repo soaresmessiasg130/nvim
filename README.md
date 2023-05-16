@@ -40,4 +40,3 @@ Run this after:
 - :let g:loaded_perl_provider = 0
 - npm install -g neovim
 - npm install -g eslint-cli
-- npm install -g eslint-cli
