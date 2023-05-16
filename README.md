@@ -1,5 +1,4 @@
 # nvim
-My nvim configuration
 
 ## Installation
 
