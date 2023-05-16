@@ -6,9 +6,9 @@ dap_ui.setup({
       size = 30,
       position = "right",
       elements = {
-        "scopes",
-        "watches",
-        "breakpoints",
+        { id = "scopes",      size = 0.50 },
+        { id = "watches",     size = 0.25 },
+        { id = "breakpoints", size = 0.25 },
       },
     },
     {
@@ -29,8 +29,8 @@ dap_ui.setup({
   },
   windows = { indent = 1 },
   render = {
-    max_type_length = 20, -- Can be integer or nil.
-    max_value_lines = 100, -- Can be integer or nil.
+    max_type_length = 20,   -- Can be integer or nil.
+    max_value_lines = 100,  -- Can be integer or nil.
     max_value_columns = 80, -- Can be integer or nil.
   },
   expand_lines = false,
