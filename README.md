@@ -35,7 +35,7 @@ Run :Mason and be sure are installed:
 - stylua
 - rescript-lsp
 
-Run:
+Run this after:
 
 - :let g:loaded_perl_provider = 0
 - npm install -g neovim
