@@ -19,17 +19,17 @@ return require("packer").startup(function(use)
   use("windwp/nvim-ts-autotag")
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-buffer")
-  use("hrsh7th/cmp-path")
-  use("hrsh7th/cmp-cmdline")
+  -- use("hrsh7th/cmp-nvim-lsp")
+  -- use("hrsh7th/cmp-buffer")
+  -- use("hrsh7th/cmp-path")
+  -- use("hrsh7th/cmp-cmdline")
   use("L3MON4D3/LuaSnip")
   use("rafamadriz/friendly-snippets")
   use("mfussenegger/nvim-dap")
-  use("rcarriga/cmp-dap")
-  use("williamboman/mason.nvim")
-  use("williamboman/mason-lspconfig.nvim")
-  use("neovim/nvim-lspconfig")
+  -- use("rcarriga/cmp-dap")
+  -- use("williamboman/mason.nvim")
+  -- use("williamboman/mason-lspconfig.nvim")
+  -- use("neovim/nvim-lspconfig")
 
   use({
     "nvim-treesitter/nvim-treesitter",
@@ -107,39 +107,39 @@ return require("packer").startup(function(use)
     end,
   })
 
-  use({
-    "hrsh7th/nvim-cmp",
-    config = function()
-      require("msz.configs.cmp")
-    end,
-  })
+  -- use({
+  --   "hrsh7th/nvim-cmp",
+  --   config = function()
+  --     require("msz.configs.cmp")
+  --   end,
+  -- })
+  --
+  -- use({
+  --   "saadparwaiz1/cmp_luasnip",
+  --   requires = {
+  --     "hrsh7th/nvim-cmp",
+  --   },
+  -- })
 
-  use({
-    "saadparwaiz1/cmp_luasnip",
-    requires = {
-      "hrsh7th/nvim-cmp",
-    },
-  })
+  -- use({
+  --   "VonHeikemen/lsp-zero.nvim",
+  --   branch = "v2.x",
+  --   requires = {
+  --     "neovim/nvim-lspconfig",
+  --     "hrsh7th/nvim-cmp",
+  --     "hrsh7th/cmp-nvim-lsp",
+  --     "L3MON4D3/LuaSnip",
+  --     "williamboman/mason.nvim",
+  --     "williamboman/mason-lspconfig.nvim",
+  --   },
+  -- })
 
-  use({
-    "VonHeikemen/lsp-zero.nvim",
-    branch = "v2.x",
-    requires = {
-      "neovim/nvim-lspconfig",
-      "hrsh7th/nvim-cmp",
-      "hrsh7th/cmp-nvim-lsp",
-      "L3MON4D3/LuaSnip",
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-    },
-  })
-
-  use({
-    "David-Kunz/cmp-npm",
-    requires = {
-      "nvim-lua/plenary.nvim",
-    },
-  })
+  -- use({
+  --   "David-Kunz/cmp-npm",
+  --   requires = {
+  --     "nvim-lua/plenary.nvim",
+  --   },
+  -- })
 
   use({
     "theHamsta/nvim-dap-virtual-text",
@@ -155,20 +155,20 @@ return require("packer").startup(function(use)
     },
   })
 
-  use({
-    "jose-elias-alvarez/null-ls.nvim",
-    config = function()
-      require("msz.configs.null-ls")
-    end,
-  })
+  -- use({
+  --   "jose-elias-alvarez/null-ls.nvim",
+  --   config = function()
+  --     require("msz.configs.null-ls")
+  --   end,
+  -- })
 
-  use({
-    "MunifTanjim/prettier.nvim",
-    config = function()
-      require("msz.configs.prettier")
-    end,
-  })
-
+  -- use({
+  --   "MunifTanjim/prettier.nvim",
+  --   config = function()
+  --     require("msz.configs.prettier")
+  --   end,
+  -- })
+  
   use({
     "terrortylor/nvim-comment",
     config = function()
@@ -210,7 +210,7 @@ return require("packer").startup(function(use)
     tag = "*",
     config = function()
       require("sentiment").setup({
-        delay = 50,
+        delay = 500,
         limit = 500,
         pairs = {
           { "{", "}" },
