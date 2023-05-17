@@ -175,17 +175,23 @@ return require("packer").startup(function(use)
       require("msz.configs.nvim-comment")
     end,
   })
-
+  
   use({
     "tanvirtin/vgit.nvim",
     requires = {
       "nvim-lua/plenary.nvim",
     },
     config = function()
-      require("vgit").setup()
+      require("vgit").setup({
+        settings = {
+         live_blame = {
+            enabled = false,
+          },
+        },
+      })
     end,
   })
-
+  
   use({
     "akinsho/git-conflict.nvim",
     tag = "*",
@@ -193,7 +199,7 @@ return require("packer").startup(function(use)
       require("git-conflict").setup()
     end,
   })
-
+  
   use({
     "karb94/neoscroll.nvim",
     config = function()
@@ -204,7 +210,7 @@ return require("packer").startup(function(use)
       })
     end,
   })
-
+  
   use({
     "utilyre/sentiment.nvim",
     tag = "*",
