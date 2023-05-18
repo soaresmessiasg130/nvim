@@ -29,8 +29,14 @@ return require("packer").startup(function(use)
   -- use("rcarriga/cmp-dap")
   -- use("williamboman/mason.nvim")
   -- use("williamboman/mason-lspconfig.nvim")
-  -- use("neovim/nvim-lspconfig")
-
+  
+  use({
+    "neovim/nvim-lspconfig", 
+    config = function() 
+      require("msz.configs.nvim-lspconfig") 
+    end,
+  }) 
+  
   use({
     "nvim-treesitter/nvim-treesitter",
     run = function()
