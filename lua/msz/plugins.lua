@@ -1,11 +1,16 @@
 local ensure_packer = function()
   local fn = vim.fn
+  
   local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+
   if fn.empty(fn.glob(install_path)) > 0 then
     fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+
     vim.cmd([[packadd packer.nvim]])
+
     return true
   end
+
   return false
 end
 
@@ -15,17 +20,16 @@ return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
   use("nvim-lua/plenary.nvim")
   use("nvim-tree/nvim-web-devicons")
-  use("nvim-treesitter/playground")
-  use("windwp/nvim-ts-autotag")
-  use("mbbill/undotree")
-  use("tpope/vim-fugitive")
+  use("mfussenegger/nvim-dap")
+  -- use("windwp/nvim-ts-autotag")
+  -- use("mbbill/undotree")
+  -- use("tpope/vim-fugitive")
   -- use("hrsh7th/cmp-nvim-lsp")
   -- use("hrsh7th/cmp-buffer")
   -- use("hrsh7th/cmp-path")
   -- use("hrsh7th/cmp-cmdline")
-  use("L3MON4D3/LuaSnip")
-  use("rafamadriz/friendly-snippets")
-  use("mfussenegger/nvim-dap")
+  -- use("L3MON4D3/LuaSnip")
+  -- use("rafamadriz/friendly-snippets")
   -- use("rcarriga/cmp-dap")
   -- use("williamboman/mason.nvim")
   -- use("williamboman/mason-lspconfig.nvim")
@@ -41,6 +45,7 @@ return require("packer").startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = function()
       local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+
       ts_update()
     end,
     config = function()
@@ -101,7 +106,7 @@ return require("packer").startup(function(use)
   use({
     "windwp/nvim-autopairs",
     config = function()
-      require("msz.configs.autopairs")
+      require("nvim-autopairs").setup({})
     end,
   })
 
@@ -112,40 +117,13 @@ return require("packer").startup(function(use)
       require("msz.configs.rose-pine")
     end,
   })
-
-  -- use({
-  --   "hrsh7th/nvim-cmp",
-  --   config = function()
-  --     require("msz.configs.cmp")
-  --   end,
-  -- })
-  --
-  -- use({
-  --   "saadparwaiz1/cmp_luasnip",
-  --   requires = {
-  --     "hrsh7th/nvim-cmp",
-  --   },
-  -- })
-
-  -- use({
-  --   "VonHeikemen/lsp-zero.nvim",
-  --   branch = "v2.x",
-  --   requires = {
-  --     "neovim/nvim-lspconfig",
-  --     "hrsh7th/nvim-cmp",
-  --     "hrsh7th/cmp-nvim-lsp",
-  --     "L3MON4D3/LuaSnip",
-  --     "williamboman/mason.nvim",
-  --     "williamboman/mason-lspconfig.nvim",
-  --   },
-  -- })
-
-  -- use({
-  --   "David-Kunz/cmp-npm",
-  --   requires = {
-  --     "nvim-lua/plenary.nvim",
-  --   },
-  -- })
+  
+  use({
+    "rcarriga/nvim-dap-ui",
+    requires = {
+      "mfussenegger/nvim-dap",
+    },
+  })
 
   use({
     "theHamsta/nvim-dap-virtual-text",
@@ -154,27 +132,6 @@ return require("packer").startup(function(use)
     end,
   })
 
-  use({
-    "rcarriga/nvim-dap-ui",
-    requires = {
-      "mfussenegger/nvim-dap",
-    },
-  })
-
-  -- use({
-  --   "jose-elias-alvarez/null-ls.nvim",
-  --   config = function()
-  --     require("msz.configs.null-ls")
-  --   end,
-  -- })
-
-  -- use({
-  --   "MunifTanjim/prettier.nvim",
-  --   config = function()
-  --     require("msz.configs.prettier")
-  --   end,
-  -- })
-  
   use({
     "terrortylor/nvim-comment",
     config = function()
@@ -232,6 +189,54 @@ return require("packer").startup(function(use)
       })
     end,
   })
+
+  -- use({
+  --   "hrsh7th/nvim-cmp",
+  --   config = function()
+  --     require("msz.configs.cmp")
+  --   end,
+  -- })
+  --
+  -- use({
+  --   "saadparwaiz1/cmp_luasnip",
+  --   requires = {
+  --     "hrsh7th/nvim-cmp",
+  --   },
+  -- })
+
+  -- use({
+  --   "VonHeikemen/lsp-zero.nvim",
+  --   branch = "v2.x",
+  --   requires = {
+  --     "neovim/nvim-lspconfig",
+  --     "hrsh7th/nvim-cmp",
+  --     "hrsh7th/cmp-nvim-lsp",
+  --     "L3MON4D3/LuaSnip",
+  --     "williamboman/mason.nvim",
+  --     "williamboman/mason-lspconfig.nvim",
+  --   },
+  -- })
+
+  -- use({
+  --   "David-Kunz/cmp-npm",
+  --   requires = {
+  --     "nvim-lua/plenary.nvim",
+  --   },
+  -- })
+
+    -- use({
+  --   "jose-elias-alvarez/null-ls.nvim",
+  --   config = function()
+  --     require("msz.configs.null-ls")
+  --   end,
+  -- })
+
+  -- use({
+  --   "MunifTanjim/prettier.nvim",
+  --   config = function()
+  --     require("msz.configs.prettier")
+  --   end,
+  -- })
 
   if packer_bootstrap then
     require("packer").sync()
