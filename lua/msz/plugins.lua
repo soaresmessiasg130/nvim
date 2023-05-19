@@ -21,7 +21,12 @@ return require("packer").startup(function(use)
   use("nvim-lua/plenary.nvim")
   use("nvim-tree/nvim-web-devicons")
   use("mfussenegger/nvim-dap")
-  use("neovim/nvim-lspconfig") 
+  use("neovim/nvim-lspconfig")
+  use("hrsh7th/nvim-cmp")
+  use("hrsh7th/cmp-nvim-lsp")
+  use("saadparwaiz1/cmp_luasnip")
+  use("L3MON4D3/LuaSnip")
+  use("williamboman/mason-lspconfig.nvim")
   -- use("windwp/nvim-ts-autotag")
   -- use("mbbill/undotree")
   -- use("tpope/vim-fugitive")
@@ -33,8 +38,13 @@ return require("packer").startup(function(use)
   -- use("rafamadriz/friendly-snippets")
   -- use("rcarriga/cmp-dap")
   -- use("williamboman/mason.nvim")
-  -- use("williamboman/mason-lspconfig.nvim") 
-  
+  -- use("williamboman/mason-lspconfig.nvim")
+  --
+  use({
+    "williamboman/mason.nvim",
+    run = ":MasonUpdate",
+  })
+
   use({
     "nvim-treesitter/nvim-treesitter",
     run = function()
@@ -153,7 +163,7 @@ return require("packer").startup(function(use)
     "akinsho/git-conflict.nvim",
     tag = "*",
     config = function()
-      require("git-conflict").setup()
+      require("git-conflict").setup({})
     end,
   })
   

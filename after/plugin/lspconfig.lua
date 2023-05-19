@@ -1,4 +1,19 @@
-local lsp = require("lspconfig")
+local mason = require("mason")
+local mason_lspconfig = require("mason-lspconfig")
+local lspconfig = require("lspconfig")
+
+mason.setup({
+  ui = {
+    border = "rounded",
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗"
+    },
+  },
+})
+
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local on_attach = function(_, bufnr)
   local function buf_set_keymap(...)
@@ -16,7 +31,9 @@ end
 local servers = {
   {
     id = "lua_ls",
+    version = "latest",
     setup = {
+      capabilities = capabilities,
       on_attach = on_attach,
       settings = {
         Lua = {
@@ -38,6 +55,24 @@ local servers = {
   },
 }
 
+local function getServersIds()
+  local res = {}
+
+  for _, server in pairs(servers) do
+    table.insert(res, server["id"] .. "@" .. server["version"])
+  end
+
+  return res
+end
+
+local servers_ids = getServersIds()
+
+mason_lspconfig.setup({
+  automatic_installation = true,
+  handlers = nil,
+  ensure_installed = servers_ids,
+})
+
 for _, server in pairs(servers) do
-  lsp[server["id"]].setup(server["setup"])
+  lspconfig[server["id"]].setup(server["setup"])
 end
