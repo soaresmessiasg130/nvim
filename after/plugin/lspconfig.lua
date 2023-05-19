@@ -25,7 +25,8 @@ local on_attach = function(_, bufnr)
     silent = true,
   }
 
-  buf_set_keymap("n", "K", "<CMD>lua vim.lsp.buf.hover()<CR>", opts)
+  buf_set_keymap("n", "<leader>lp", "<CMD>lua vim.lsp.buf.hover()<CR>", opts)
+  buf_set_keymap("n", "<leader>lo", "<CMD>lua vim.lsp.buf.type_definition()<CR>", opts)
 end
 
 local servers = {

@@ -79,3 +79,9 @@ map("n", "<leader>ng", "<CMD>Neogit kind=split<CR>")
 
 -- VGit
 map("n", "<leader>nd", "<CMD>VGit project_diff_preview<CR>")
+
+-- Lsp
+map("n", "<leader>lj", "<CMD>lua vim.diagnostic.open_float()<CR>")
+map("n", "<leader>lh", "<CMD>lua vim.diagnostic.goto_prev()<CR>")
+map("n", "<leader>ll", "<CMD>lua vim.diagnostic.goto_next()<CR>")
+map("n", "<leader>lk", "<CMD>lua vim.diagnostic.setloclist()<CR>")
