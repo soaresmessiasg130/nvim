@@ -1,0 +1,32 @@
+{
+    "workspace.library": [
+        "/home/msz/.config/nvim",
+        "/home/msz/.local/share/nvim/site",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/git-conflict.nvim",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/nui.nvim",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/nvim-comment",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/nvim-dap",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/packer.nvim",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/rose-pine",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/sentiment.nvim",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+        "/home/msz/.local/share/nvim/site/pack/packer/start/vgit.nvim",
+        "/home/msz/.asdf/installs/neovim/stable/share/nvim/runtime",
+        "/home/msz/.asdf/installs/neovim/stable/share/nvim/runtime/pack/dist/opt/matchit",
+        "/home/msz/.asdf/installs/neovim/stable/lib/nvim",
+        "/home/msz/.config/nvim/after",
+        "${3rd}/luassert/library"
+    ]
+}

@@ -21,6 +21,7 @@ return require("packer").startup(function(use)
   use("nvim-lua/plenary.nvim")
   use("nvim-tree/nvim-web-devicons")
   use("mfussenegger/nvim-dap")
+  use("neovim/nvim-lspconfig") 
   -- use("windwp/nvim-ts-autotag")
   -- use("mbbill/undotree")
   -- use("tpope/vim-fugitive")
@@ -32,14 +33,7 @@ return require("packer").startup(function(use)
   -- use("rafamadriz/friendly-snippets")
   -- use("rcarriga/cmp-dap")
   -- use("williamboman/mason.nvim")
-  -- use("williamboman/mason-lspconfig.nvim")
-  
-  use({
-    "neovim/nvim-lspconfig", 
-    config = function() 
-      require("msz.configs.nvim-lspconfig") 
-    end,
-  }) 
+  -- use("williamboman/mason-lspconfig.nvim") 
   
   use({
     "nvim-treesitter/nvim-treesitter",
