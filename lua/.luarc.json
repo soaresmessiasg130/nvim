@@ -28,6 +28,14 @@
         "/home/msz/.asdf/installs/neovim/stable/lib/nvim",
         "/home/msz/.config/nvim/after",
         "${3rd}/luassert/library",
-        "${3rd}/luv/library"
+        "${3rd}/luv/library",
+        "${3rd}/luv/library",
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library",
+        "${3rd}/luassert/library",
+        "${3rd}/luassert/library",
+        "${3rd}/luassert/library",
+        "${3rd}/luassert/library",
+        "${3rd}/luassert/library"
     ]
 }

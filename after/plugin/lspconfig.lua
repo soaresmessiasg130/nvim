@@ -25,8 +25,20 @@ local on_attach = function(_, bufnr)
     silent = true,
   }
 
-  buf_set_keymap("n", "<leader>lp", "<CMD>lua vim.lsp.buf.hover()<CR>", opts)
-  buf_set_keymap("n", "<leader>lo", "<CMD>lua vim.lsp.buf.type_definition()<CR>", opts)
+  buf_set_keymap("n", "<leader>lo", "<CMD>lua vim.lsp.buf.hover()<CR>", opts)
+  buf_set_keymap("n", "<leader>loo", "<CMD>lua vim.lsp.buf.signature_help()<CR>", opts)
+
+  buf_set_keymap("n", "<leader>li", "<CMD>lua vim.lsp.buf.definition()<CR>", opts)
+  buf_set_keymap("n", "<leader>lii", "<CMD>lua vim.lsp.buf.type_definition()<CR>", opts)
+
+  buf_set_keymap("n", "<leader>lu", "<CMD>lua vim.lsp.buf.declaration()<CR>", opts)
+  buf_set_keymap("n", "<leader>luu", "<CMD>lua vim.lsp.buf.implementation()<CR>", opts)
+
+  buf_set_keymap("n", "<leader>lp", "<CMD>lua vim.lsp.buf.references()<CR>", opts)
+  buf_set_keymap("n", "<leader>lpp", "<CMD>lua vim.lsp.buf.code_action()<CR>", opts)
+
+  buf_set_keymap("n", "<leader>ly", "<CMD>lua vim.lsp.buf.format({ async = true })<CR>", opts)
+  buf_set_keymap("n", "<leader>lyy", "<CMD>lua vim.lsp.buf.rename()<CR>", opts)
 end
 
 local servers = {
@@ -42,7 +54,7 @@ local servers = {
             version = 'LuaJIT',
           },
           diagnostics = {
-            globals = {'vim'},
+            globals = { 'vim' },
           },
           workspace = {
             library = vim.api.nvim_get_runtime_file("", true),
