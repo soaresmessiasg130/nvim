@@ -15,6 +15,8 @@ mason.setup({
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 local on_attach = function(_, bufnr)
   local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -66,6 +68,51 @@ local servers = {
       },
     },
   },
+  {
+    id = "pyright",
+    version = "latest",
+    setup = {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {},
+    }
+  },
+  {
+    id = "tsserver",
+    version = "latest",
+    setup = {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {},
+    }
+  },
+  {
+    id = "cssls",
+    version = "latest",
+    setup = {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {},
+    }
+  },
+  {
+    id = "omnisharp",
+    version = "v1.38.0",
+    setup = {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {},
+    }
+  },
+  -- {
+  --   id = "csharp_ls",
+  --   version = "latest",
+  --   setup = {
+  --     capabilities = capabilities,
+  --     on_attach = on_attach,
+  --     settings = {},
+  --   }
+  -- },
 }
 
 local function getServersIds()
