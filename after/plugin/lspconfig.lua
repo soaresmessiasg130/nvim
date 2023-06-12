@@ -104,15 +104,15 @@ local servers = {
       settings = {},
     }
   },
-  -- {
-  --   id = "csharp_ls",
-  --   version = "latest",
-  --   setup = {
-  --     capabilities = capabilities,
-  --     on_attach = on_attach,
-  --     settings = {},
-  --   }
-  -- },
+  {
+    id = "eslint",
+    version = "latest",
+    setup = {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {},
+    }
+  },
 }
 
 local function getServersIds()
