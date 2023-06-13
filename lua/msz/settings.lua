@@ -55,3 +55,5 @@ o.ttimeoutlen = 0
 o.updatetime = 250
 o.showmatch = true
 o.incsearch = false
+o.foldmethod = "expr"
+o.foldexpr = "nvim_treesitter#foldexpr()"
