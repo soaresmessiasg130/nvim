@@ -15,7 +15,7 @@ For Wayland, install:
 
 Run :PackerSync.
 
-Run :Mason and be sure are installed:
+Run :Mason and be sure the following LSP's are installed:
 
 - clangd 
 - css-lsp cssls
@@ -25,15 +25,22 @@ Run :Mason and be sure are installed:
 - jdtls 
 - json-lsp jsonls
 - lua-language-server lua_ls
-- netcoredbg 
 - omnisharp@v1.38.0
-- prettier 
 - pyright 
 - rust-analyzer rust_analyzer
 - tailwindcss-language-server tailwindcss
 - typescript-language-server tsserver
-- stylua
 - rescript-lsp
+
+Run :Mason and be sure the following Formatters are installed:
+
+- prettier 
+- prettierd
+- stylua
+
+Run :Mason and be sure the following DAP's are installed:
+
+- netcoredbg 
 
 Run this after:
 

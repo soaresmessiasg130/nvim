@@ -1,4 +1,5 @@
-local luasnip, cmp = require("luasnip"), require("cmp")
+local luasnip = require("luasnip")
+local cmp = require("cmp")
 
 cmp.setup({
   snippet = {
@@ -37,4 +38,13 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
 })
+
+vim.cmd([[
+  set completeopt=menuone,noinsert,noselect
+  highlight! default link CmpItemKind CmpItemMenuDefault
+]])

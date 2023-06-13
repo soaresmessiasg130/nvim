@@ -52,6 +52,6 @@ o.mouse = "a"
 o.wildmenu = true
 o.showcmd = true
 o.ttimeoutlen = 0
-o.updatetime = 300
+o.updatetime = 250
 o.showmatch = true
 o.incsearch = false

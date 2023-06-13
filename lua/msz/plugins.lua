@@ -1,6 +1,6 @@
 local ensure_packer = function()
   local fn = vim.fn
-  
+
   local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
   if fn.empty(fn.glob(install_path)) > 0 then
@@ -22,11 +22,13 @@ return require("packer").startup(function(use)
   use("nvim-tree/nvim-web-devicons")
   use("mfussenegger/nvim-dap")
   use("neovim/nvim-lspconfig")
-  use("hrsh7th/nvim-cmp")
+  use("hrsh7th/cmp-buffer")
   use("hrsh7th/cmp-nvim-lsp")
+  use("hrsh7th/nvim-cmp")
   use("saadparwaiz1/cmp_luasnip")
   use("L3MON4D3/LuaSnip")
   use("williamboman/mason-lspconfig.nvim")
+  use("jose-elias-alvarez/null-ls.nvim")
   -- use("windwp/nvim-ts-autotag")
   -- use("mbbill/undotree")
   -- use("tpope/vim-fugitive")
@@ -121,7 +123,7 @@ return require("packer").startup(function(use)
       require("msz.configs.rose-pine")
     end,
   })
-  
+
   use({
     "rcarriga/nvim-dap-ui",
     requires = {
@@ -142,7 +144,7 @@ return require("packer").startup(function(use)
       require("msz.configs.nvim-comment")
     end,
   })
-  
+
   use({
     "tanvirtin/vgit.nvim",
     requires = {
@@ -151,14 +153,14 @@ return require("packer").startup(function(use)
     config = function()
       require("vgit").setup({
         settings = {
-         live_blame = {
+          live_blame = {
             enabled = false,
           },
         },
       })
     end,
   })
-  
+
   use({
     "akinsho/git-conflict.nvim",
     tag = "*",
@@ -166,7 +168,7 @@ return require("packer").startup(function(use)
       require("git-conflict").setup({})
     end,
   })
-  
+
   use({
     "karb94/neoscroll.nvim",
     config = function()
@@ -177,7 +179,7 @@ return require("packer").startup(function(use)
       })
     end,
   })
-  
+
   use({
     "utilyre/sentiment.nvim",
     tag = "*",
@@ -228,7 +230,7 @@ return require("packer").startup(function(use)
   --   },
   -- })
 
-    -- use({
+  -- use({
   --   "jose-elias-alvarez/null-ls.nvim",
   --   config = function()
   --     require("msz.configs.null-ls")
