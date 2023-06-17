@@ -8,10 +8,8 @@ Install dependencies:
 - Install Packer.nvim
 - ripgrep
 - fd-finder
-
-For Wayland, install:
-
-- wl-clipboard
+- xclip
+- wl-clipboard (for Wayland)
 
 Run :PackerSync.
 
@@ -28,6 +26,7 @@ Run :Mason and be sure are installed:
 - netcoredbg 
 - omnisharp@v1.38.0
 - prettier 
+- prettierd
 - pyright 
 - rust-analyzer rust_analyzer
 - tailwindcss-language-server tailwindcss
