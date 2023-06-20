@@ -171,7 +171,17 @@ vim.diagnostic.config {
   float = { border = _border }
 }
 
-local teste = {}
+lspconfig["dartls"].setup({
+  on_attach = on_attach,
+  settings = {
+    dart = {
+      analysisExcludedFolders = {
+        vim.fn.expand("$HOME/.pub-cache"),
+        vim.fn.expand("$HOME/tools/flutter/")
+      },
+    },
+  },
+})
 
 vim.cmd([[
   autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focus = false })
