@@ -1,5 +1,5 @@
 local function map(mode, lhs, rhs)
-  vim.keymap.set(mode, lhs, rhs, { silent = true })
+  vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true })
 end
 
 local status, telescope = pcall(require, "telescope.builtin")
@@ -80,8 +80,8 @@ map("n", "<leader>ng", "<CMD>Neogit kind=split<CR>")
 -- VGit
 map("n", "<leader>nd", "<CMD>VGit project_diff_preview<CR>")
 
--- Lsp
-map("n", "<leader>lj", "<CMD>lua vim.diagnostic.open_float()<CR>")
-map("n", "<leader>lh", "<CMD>lua vim.diagnostic.goto_prev()<CR>")
-map("n", "<leader>ll", "<CMD>lua vim.diagnostic.goto_next()<CR>")
-map("n", "<leader>lk", "<CMD>lua vim.diagnostic.setloclist()<CR>")
+-- Move
+map("n", "<A-j>", ":MoveLine(1)<CR>")
+map("n", "<A-k>", ":MoveLine(-1)<CR>")
+map("v", "<A-k>", ":MoveBlock(-1)<CR>")
+map("v", "<A-j>", ":MoveBlock(1)<CR>")
