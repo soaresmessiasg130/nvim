@@ -8,5 +8,9 @@ nvim_comment.setup({
   line_mapping = "gcc",
   operator_mapping = "gc",
   comment_chunk_text_object = "ic",
-  hook = nil,
+  hook = function()
+    if vim.api.nvim_buf_get_option(0, "filetype") == "cs" then
+      vim.api.nvim_buf_set_option(0, "commentstring", "// %s")
+    end
+  end,
 })
