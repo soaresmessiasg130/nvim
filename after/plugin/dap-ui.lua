@@ -6,9 +6,9 @@ dap_ui.setup({
       size = 35,
       position = "right",
       elements = {
-        { id = "repl", size = 0.4 },
-        { id = "scopes", size = 0.2 },
-        { id = "watches", size = 0.2 },
+        { id = "repl",        size = 0.5 },
+        { id = "scopes",      size = 0.3 },
+        -- { id = "watches", size = 0.2 },
         { id = "breakpoints", size = 0.2 },
       },
     },
