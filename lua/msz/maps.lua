@@ -85,3 +85,7 @@ map("n", "<A-j>", ":MoveLine(1)<CR>")
 map("n", "<A-k>", ":MoveLine(-1)<CR>")
 map("v", "<A-k>", ":MoveBlock(-1)<CR>")
 map("v", "<A-j>", ":MoveBlock(1)<CR>")
+
+-- Folding
+map("n", "<leader>kp", ":foldclose<CR>")
+map("n", "<leader>ko", ":foldopen<CR>")

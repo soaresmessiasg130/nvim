@@ -1,23 +1,17 @@
+const teste = 10;
 
-
-const teste = 10
-
-console.log(teste)
+console.log(teste);
 
 async function teste() {
-  console.log(teste)
+  console.log(teste);
 }
 
-teste()
-
+teste();
 
 const MyComponent = () => {
   return (
     <div>
-      <p>
-        Hello, world!!!
-      </p>
+      <p>Hello, world!!!</p>
     </div>
-  )
-}
-
+  );
+};
