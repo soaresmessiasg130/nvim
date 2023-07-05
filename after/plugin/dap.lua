@@ -17,9 +17,9 @@ dap.configurations.cs = {
   },
   {
     type = "coreclr",
-    name = "Debug .Net Project",
+    name = "Debug .NET Console",
     request = "launch",
-    args = { "--urls", "http://+:8110" },
+    args = {},
     program = function()
       local project = GetLocalFolderName()
 
@@ -39,18 +39,44 @@ dap.configurations.cs = {
   },
   {
     type = "coreclr",
-    name = "Auth - TripMeeApp-Back",
+    name = "TripMeeApp-Back - Auth",
     request = "launch",
     args = { "--urls", "http://+:8110" },
-    cwd = os.getenv("HOME") .. "/Desktop/TripMeeApp-Back/TripMeeApp.Auth",
-    program = os.getenv("HOME") .. "/Desktop/TripMeeApp-Back/TripMeeApp.Auth/bin/Debug/net6.0/TripMeeApp.Auth.dll",
+    program = function()
+      local res = vim.fn.getcwd() .. "/TripMeeApp.Auth/bin/Debug/net6.0/TripMeeApp.Auth.dll"
+
+      BuildDotnetProject(res)
+
+      return res
+    end,
+    cwd = vim.fn.getcwd() .. "/TripMeeApp.Auth",
   },
   {
     type = "coreclr",
-    name = "Apis - TripMeeApp-Back",
+    name = "TripMeeApp-Back - Apis",
     request = "launch",
     args = { "--urls", "http://+:8120" },
-    cwd = os.getenv("HOME") .. "/Desktop/TripMeeApp-Back/TripMeeApp.Apis",
-    program = os.getenv("HOME") .. "/Desktop/TripMeeApp-Back/TripMeeApp.Apis/bin/Debug/net6.0/TripMeeApp.Apis.dll",
+    program = function()
+      local res = vim.fn.getcwd() .. "/TripMeeApp.Apis/bin/Debug/net6.0/TripMeeApp.Apis.dll"
+
+      BuildDotnetProject(res)
+
+      return res
+    end,
+    cwd = vim.fn.getcwd() .. "/TripMeeApp.Apis",
+  },
+  {
+    type = "coreclr",
+    name = "TripMeeApp-Back - PushNotifications",
+    request = "launch",
+    args = {},
+    program = function()
+      local res = vim.fn.getcwd() .. "/TripMeeApp.PushNotifications/bin/Debug/net6.0/TripMeeApp.PushNotifications.dll"
+
+      BuildDotnetProject(res)
+
+      return res
+    end,
+    cwd = vim.fn.getcwd() .. "/TripMeeApp.PushNotifications",
   },
 }

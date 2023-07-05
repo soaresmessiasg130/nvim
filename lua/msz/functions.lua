@@ -49,11 +49,13 @@ function GetLocalFolderName(message)
 end
 
 function BuildDotnetProject(workspace)
-  print("\n\nBuilding: " .. workspace)
+  -- print("\n\nBuilding: " .. workspace)
 
-  local filename = os.tmpname()
+  -- local filename = os.tmpname()
 
-  os.execute("dotnet build > " .. filename)
+  -- os.execute("dotnet build > " .. filename)
 
-  print("\nFinish build... File saved: " .. filename)
+  -- print("\nFinish build... File saved: " .. filename)
+
+  os.execute("dotnet build > /dev/null 2>&1")
 end

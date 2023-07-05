@@ -57,3 +57,4 @@ o.showmatch = true
 o.incsearch = false
 o.foldmethod = "expr"
 o.foldexpr = "nvim_treesitter#foldexpr()"
+o.foldlevel = 4
