@@ -29,7 +29,8 @@ local on_attach = function(client, bufnr)
   }
 
   buf_set_keymap("n", "<leader>lo", "<CMD>lua vim.lsp.buf.hover()<CR>", opts)
-  buf_set_keymap("n", "<leader>loo", "<CMD>lua vim.lsp.buf.signature_help()<CR>", opts)
+  buf_set_keymap("n", "<leader>loo", "<CMD>lua vim.diagnostic.open_float(nil, { focus = false })<CR>", opts)
+  -- buf_set_keymap("n", "<leader>loo", "<CMD>lua vim.lsp.buf.signature_help()<CR>", opts)
 
   buf_set_keymap("n", "<leader>li", "<CMD>lua vim.lsp.buf.definition()<CR>", opts)
   buf_set_keymap("n", "<leader>lii", "<CMD>lua vim.lsp.buf.type_definition()<CR>", opts)
@@ -183,6 +184,6 @@ lspconfig["dartls"].setup({
   },
 })
 
-vim.cmd([[
-  autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focus = false })
-]])
+-- vim.cmd([[
+--   autocmd! CursorHold * lua vim.diagnostic.open_float(nil, { focus = false })
+-- ]])
