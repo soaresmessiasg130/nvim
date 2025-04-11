@@ -1,0 +1,6 @@
+require('msz.core.settings')
+require('msz.core.lazy')
+require('msz.core.commands')
+require('msz.core.extensions')
+require('msz.core.maps')
+require('msz.core.configs')
