@@ -219,6 +219,16 @@ local servers = {
       },
     },
   },
+  {
+    id = 'gopls',
+    version = nil,
+    install_by_mason = true,
+    setup = {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {},
+    },
+  },
 }
 
 local function getServersIds()
