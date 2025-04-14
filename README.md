@@ -31,3 +31,7 @@ If you have an GUI, install this:
 ## install development packages
 
 - :MasonInstall netcoredbg eslint_d prettier prettierd stylua tree-sitter-cli xmlformatter
+
+## post installation
+
+- Terminal Plugin: on Terminal plugin config file, change to your shell: ```bash``` or ```zsh``` or ```fish```, etc.
