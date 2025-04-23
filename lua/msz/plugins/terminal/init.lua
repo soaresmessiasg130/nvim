@@ -7,7 +7,7 @@ return {
       open_mapping = [[`]],
       shading_factor = 2,
       direction = "float",
-      shell = "bash",
+      shell = "zsh",
       float_opts = {
         border = "rounded",
         highlights = {
