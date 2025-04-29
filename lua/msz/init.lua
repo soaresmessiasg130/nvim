@@ -1,8 +1,0 @@
-require('msz.core')
-require('msz.functions.globals')
-require('msz.components')
-require('msz.src.cmp')
-require('msz.src.lsp')
-require('msz.src.mason-lspconfig')
-require('msz.src.typescript-tools')
-require('msz.src.treesitter')
