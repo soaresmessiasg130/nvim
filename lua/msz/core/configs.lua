@@ -2,10 +2,18 @@ local dap = require('dap')
 local dap_ui = require('dapui')
 local icons = require('msz.assets.icons')
 local colors = require('msz.assets.colors')
-local env = require('msz.core.env')
 local notify = require('notify')
 
-dap.configurations.cs = env.dap.cs
+dap.configurations.cs = {
+  {
+    type = "coreclr",
+    name = "launch - netcoredbg",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to DLL: ', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+    end
+  }
+}
 
 dap.adapters.coreclr = {
   type = 'executable',
