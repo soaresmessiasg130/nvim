@@ -164,20 +164,6 @@ local servers = {
     }
   },
   {
-    id = 'jdtls',
-    version = nil,
-    install_by_mason = true,
-    setup = {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = {
-        completion = {
-          callSnippet = 'Replace',
-        },
-      },
-    },
-  },
-  {
     id = 'lemminx',
     version = nil,
     install_by_mason = true,
