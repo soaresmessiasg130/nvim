@@ -15,11 +15,29 @@ dap.configurations.cs = {
   }
 }
 
+dap.configurations.java = {
+  {
+    javaExec = "/path/to/your/bin/java",
+    mainClass = "com.messiasspp.testingjavanvim.TestingjavanvimApplication",
+    name = "Launch YourClassName",
+    request = "launch",
+    type = "java"
+  }
+}
+
 dap.adapters.coreclr = {
   type = 'executable',
   command = os.getenv('HOME') .. '/.local/share/nvim/mason/packages/netcoredbg/libexec/netcoredbg/netcoredbg',
   args = { '--interpreter=vscode' },
 }
+
+dap.adapters.java = function(callback)
+  callback({
+    type = 'server';
+    host = '127.0.0.1';
+    port = 5005;
+  })
+end
 
 dap.listeners.after.event_initialized['dapui_config'] = function()
   dap_ui.open()
