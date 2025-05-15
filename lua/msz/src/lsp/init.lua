@@ -7,6 +7,7 @@ local servers = {
     id = 'lua_ls',
     version = nil,
     install_by_mason = true,
+    ensure_installed = true,
     setup = {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -35,6 +36,7 @@ local servers = {
     id = 'pyright',
     version = nil,
     install_by_mason = true,
+    ensure_installed = true,
     setup = {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -49,6 +51,7 @@ local servers = {
     id = 'omnisharp',
     version = nil,
     install_by_mason = true,
+    ensure_installed = true,
     setup = {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -69,6 +72,7 @@ local servers = {
     id = 'eslint',
     version = nil,
     install_by_mason = true,
+    ensure_installed = true,
     setup = {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -83,6 +87,7 @@ local servers = {
     id = 'html',
     version = nil,
     install_by_mason = true,
+    ensure_installed = true,
     setup = {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -97,6 +102,7 @@ local servers = {
     id = 'cssls',
     version = nil,
     install_by_mason = true,
+    ensure_installed = true,
     setup = {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -111,6 +117,7 @@ local servers = {
     id = 'jsonls',
     version = nil,
     install_by_mason = true,
+    ensure_installed = true,
     setup = {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -125,6 +132,7 @@ local servers = {
     id = 'dockerls',
     version = nil,
     install_by_mason = true,
+    ensure_installed = true,
     setup = {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -139,6 +147,7 @@ local servers = {
     id = 'marksman',
     version = nil,
     install_by_mason = true,
+    ensure_installed = true,
     setup = {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -153,6 +162,7 @@ local servers = {
     id = 'clojure_lsp',
     version = nil,
     install_by_mason = true,
+    ensure_installed = true,
     setup = {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -167,6 +177,7 @@ local servers = {
     id = 'lemminx',
     version = nil,
     install_by_mason = true,
+    ensure_installed = true,
     setup = {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -181,6 +192,7 @@ local servers = {
     id = 'bashls',
     version = nil,
     install_by_mason = true,
+    ensure_installed = true,
     setup = {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -195,6 +207,7 @@ local servers = {
     id = 'angularls',
     version = nil,
     install_by_mason = true,
+    ensure_installed = true,
     setup = {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -209,23 +222,55 @@ local servers = {
     id = 'gopls',
     version = nil,
     install_by_mason = true,
+    ensure_installed = true,
     setup = {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = {},
     },
   },
+  -- {
+  --   id = 'jdtls',
+  --   version = nil,
+  --   install_by_mason = true,
+  --   ensure_installed = false,
+  --   setup = {
+  --     capabilities = capabilities,
+  --     on_attach = on_attach,
+  --     settings = {
+  --       completion = {
+  --         callSnippet = 'Replace',
+  --       },
+  --     },
+  --   },
+  -- },
 }
 
 local function getServersIds()
   local res = {}
 
   for _, server in pairs(servers) do
-    local serverVersion = server['version']
-        and '@' .. server['version']
-        or ''
-
     if server['install_by_mason'] then
+      local serverVersion = server['version']
+          and '@' .. server['version']
+          or ''
+
+      table.insert(res, server['id'] .. serverVersion)
+    end
+  end
+
+  return res
+end
+
+local function getServersThatEnsureInstalled()
+  local res = {}
+
+  for _, server in pairs(servers) do
+    if server['ensure_installed'] then
+      local serverVersion = server['version']
+          and '@' .. server['version']
+          or ''
+
       table.insert(res, server['id'] .. serverVersion)
     end
   end
@@ -240,5 +285,7 @@ end
 local M = {}
 
 M.servers_ids = getServersIds()
+
+M.ensure_installed = getServersThatEnsureInstalled()
 
 return M

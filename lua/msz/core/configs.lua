@@ -15,29 +15,11 @@ dap.configurations.cs = {
   }
 }
 
-dap.configurations.java = {
-  {
-    javaExec = "/path/to/your/bin/java",
-    mainClass = "com.messiasspp.testingjavanvim.TestingjavanvimApplication",
-    name = "Launch YourClassName",
-    request = "launch",
-    type = "java"
-  }
-}
-
 dap.adapters.coreclr = {
   type = 'executable',
   command = os.getenv('HOME') .. '/.local/share/nvim/mason/packages/netcoredbg/libexec/netcoredbg/netcoredbg',
   args = { '--interpreter=vscode' },
 }
-
-dap.adapters.java = function(callback)
-  callback({
-    type = 'server';
-    host = '127.0.0.1';
-    port = 5005;
-  })
-end
 
 dap.listeners.after.event_initialized['dapui_config'] = function()
   dap_ui.open()
@@ -68,18 +50,6 @@ vim.fn.sign_define('DiagnosticSignError', { text = icons.Diagnostics.Error, text
 vim.fn.sign_define('DiagnosticSignWarn', { text = icons.Diagnostics.Warn, texthl = 'yellow' })
 vim.fn.sign_define('DiagnosticSignInfo', { text = icons.Diagnostics.Info, texthl = 'blue' })
 vim.fn.sign_define('DiagnosticSignHint', { text = icons.Diagnostics.Hint, texthl = 'blue' })
-
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-  vim.lsp.handlers.hover, {
-    border = 'rounded'
-  }
-)
-
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-  vim.lsp.handlers.signature_help, {
-    border = 'rounded'
-  }
-)
 
 vim.diagnostic.config {
   virtual_text = false,
