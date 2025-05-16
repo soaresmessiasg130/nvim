@@ -229,21 +229,6 @@ local servers = {
       settings = {},
     },
   },
-  -- {
-  --   id = 'jdtls',
-  --   version = nil,
-  --   install_by_mason = true,
-  --   ensure_installed = false,
-  --   setup = {
-  --     capabilities = capabilities,
-  --     on_attach = on_attach,
-  --     settings = {
-  --       completion = {
-  --         callSnippet = 'Replace',
-  --       },
-  --     },
-  --   },
-  -- },
 }
 
 local function getServersIds()
