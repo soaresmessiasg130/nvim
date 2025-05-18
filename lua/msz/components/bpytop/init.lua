@@ -1,17 +1,8 @@
-local toggletermFunctions = require('msz.functions.toggleterm')
-
-local terminal = toggletermFunctions.createCustomTerminal({
-  display_name = 'Bpytop',
-  cmd = 'bpytop',
-  direction = 'float',
-  count = 2,
-})
-
-function __toggle_bpytop()
-  terminal:toggle()
+function BpytopComponent()
+  TerminalComponent({
+    display_name = 'Bpytop',
+    cmd = 'bpytop',
+    direction = 'float',
+    count = 2,
+  })
 end
-
-vim.api.nvim_set_keymap('n', '<leader>lt', '<cmd>lua __toggle_bpytop()<CR>', {
-  noremap = true,
-  silent = true,
-})

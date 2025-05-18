@@ -1,7 +1,8 @@
+local mapFunctions = require('msz.functions.map')
 local terminal = require('toggleterm.terminal').Terminal
 
-local function createCustomTerminal(props)
-  return terminal:new({
+function TerminalComponent(props)
+  local terminalInstance = terminal:new({
     display_name = props.display_name,
     cmd = props.cmd,
     hidden = true,
@@ -13,17 +14,12 @@ local function createCustomTerminal(props)
     on_open = function(term)
       vim.cmd('startinsert!')
 
-      vim.api.nvim_buf_set_keymap(term.bufnr, 'n', 'q', '<cmd>close<CR>', {
-        noremap = true,
-        silent = true,
-      })
+      mapFunctions.mapBuff(term.bufnr, 'n', 'q', '<cmd>close<CR>')
     end,
-    on_close = function(term)
+    on_close = function()
       vim.cmd('startinsert!')
     end,
   })
-end
 
-return {
-  createCustomTerminal = createCustomTerminal,
-}
+  terminalInstance:toggle()
+end

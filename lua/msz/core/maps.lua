@@ -82,3 +82,9 @@ mapFunctions.map("n", "<leader>ko", "<CMD>foldopen<CR>")
 
 -- Undotree
 mapFunctions.map("n", "<leader>ho", "<CMD>UndotreeToggle<CR>")
+
+-- Bpytop
+mapFunctions.map('n', '<leader>lt', '<cmd>lua BpytopComponent()<CR>')
+
+-- LazyGit
+mapFunctions.map('n', '<leader>lg', '<cmd>lua LazyGitComponent()<CR>')
