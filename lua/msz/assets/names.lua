@@ -1,8 +1,9 @@
 local icons = require("msz.assets.icons")
-local M = {}
 
 local fullName = "Messias Soares"
 local githubProfile = "soaresmessiasg130"
+
+local M = {}
 
 M.Me = {
   FullName = fullName,
