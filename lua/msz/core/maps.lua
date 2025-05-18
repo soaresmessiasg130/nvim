@@ -1,7 +1,5 @@
 local mapFunctions = require('msz.functions.map')
--- local telescope = require("telescope")
 local telescopeBuiltin = require("telescope.builtin")
-local keymaps = require('msz.assets.keymaps')
 
 -- Telescope
 mapFunctions.map("n", "<leader>ff", telescopeBuiltin.find_files)
@@ -11,7 +9,6 @@ mapFunctions.map("n", "<leader>fh", telescopeBuiltin.help_tags)
 mapFunctions.map("n", "<leader>fs", telescopeBuiltin.git_status)
 mapFunctions.map("n", "<leader>fd", telescopeBuiltin.git_commits)
 mapFunctions.map("n", "<leader>fa", telescopeBuiltin.diagnostics)
--- mapFunctions.map("n", "<leader>fv", telescope.extensions.flutter.commands)
 
 -- Custom
 mapFunctions.map("n", "<C-s>", "<CMD>w<CR>")
@@ -22,7 +19,7 @@ mapFunctions.map("i", "<C-s>", "<CMD>w<CR>")
 mapFunctions.map("i", "<C-z>", "<CMD>u<CR>")
 
 -- LSP
-mapFunctions.map('n', keymaps.LSP_TROUBLE, '<CMD>Trouble toggle lsp win.position=right<CR>')
+mapFunctions.map('n', '<leader>lpp', '<CMD>Trouble toggle lsp win.position=right<CR>')
 
 -- DapUI
 mapFunctions.map("n", "<F5>", "<CMD>DapContinue<CR>")
@@ -69,9 +66,9 @@ mapFunctions.map("n", "<C-Up>", "2<C-w>+")
 mapFunctions.map("n", "<C-Down>", "2<C-w>-")
 
 -- Gitsigns
-mapFunctions.map("n", keymaps.PREVIEW_HUNK, "<CMD>Gitsigns preview_hunk<CR>")
-mapFunctions.map("n", keymaps.NEXT_HUNK, "<CMD>Gitsigns next_hunk<CR>")
-mapFunctions.map("n", keymaps.PREV_HUNK, "<CMD>Gitsigns prev_hunk<CR>")
+mapFunctions.map("n", "<leader>ni", "<CMD>Gitsigns preview_hunk<CR>")
+mapFunctions.map("n", "<leader>no", "<CMD>Gitsigns next_hunk<CR>")
+mapFunctions.map("n", "<leader>np", "<CMD>Gitsigns prev_hunk<CR>")
 
 -- Move
 mapFunctions.map("n", "<A-j>", "<CMD>MoveLine(1)<CR>")

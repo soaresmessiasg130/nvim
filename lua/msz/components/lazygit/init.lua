@@ -1,5 +1,4 @@
 local toggletermFunctions = require('msz.functions.toggleterm')
-local keymaps = require('msz.assets.keymaps')
 
 local terminal = toggletermFunctions.createCustomTerminal({
   display_name = 'Lazygit',
@@ -12,7 +11,7 @@ function __toggle_lazygit()
   terminal:toggle()
 end
 
-vim.api.nvim_set_keymap('n', keymaps.LAZYGIT, '<cmd>lua __toggle_lazygit()<CR>', {
+vim.api.nvim_set_keymap('n', '<leader>lg', '<cmd>lua __toggle_lazygit()<CR>', {
   noremap = true,
   silent = true,
 })
