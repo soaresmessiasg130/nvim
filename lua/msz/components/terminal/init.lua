@@ -1,4 +1,3 @@
-local mapFunctions = require('msz.functions.map')
 local terminal = require('toggleterm.terminal').Terminal
 
 function TerminalComponent(props)
@@ -14,7 +13,7 @@ function TerminalComponent(props)
     on_open = function(term)
       vim.cmd('startinsert!')
 
-      mapFunctions.mapBuff(term.bufnr, 'n', 'q', '<cmd>close<CR>')
+      MapBuffFunction(term.bufnr, 'n', 'q', '<cmd>close<CR>')
     end,
     on_close = function()
       vim.cmd('startinsert!')
