@@ -10,6 +10,7 @@ require('msz.functions.dotnet')
 require('msz.components.bpytop')
 require('msz.components.lazygit')
 require('msz.components.terminal')
+require('msz.components.notify')
 
 -- Load plugins configurations
 require('msz.src.cmp')

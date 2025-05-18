@@ -1,5 +1,3 @@
-local notify = require('notify')
-
 function BuildDotnetProject()
   local filename = os.tmpname()
 
@@ -7,31 +5,35 @@ function BuildDotnetProject()
 
   os.execute(command)
 
-  if notify then
-    local file = io.open(filename, 'r')
+  local file = io.open(filename, 'r')
 
-    if not file then
-      notify('File "' .. filename .. '" not found!!!')
+  if not file then
+    NotifyComponent({
+      title = 'File not found',
+      type = 'error',
+      content = filename,
+    })
 
-      return
-    end
+    return
+  end
 
-    local fileContent = file:read("*a")
+  local fileContent = file:read("*a")
 
-    file:close()
+  file:close()
 
-    if fileContent:find("0 Error") then
-      notify('command: ' .. command, 'success', {
-        title = 'Build success'
-      })
-    else
-      notify('command: ' .. command, 'error', {
-        title = 'Build error'
-      })
-
-      vim.cmd(string.format("45vsplit %s", filename))
-    end
+  if fileContent:find("0 Error") then
+    NotifyComponent({
+      title = 'Build success',
+      type = 'success',
+      content = 'command: ' .. command,
+    })
   else
+    NotifyComponent({
+      title = 'Build error',
+      type = 'error',
+      content = 'command: ' .. command,
+    })
+
     vim.cmd(string.format("45vsplit %s", filename))
   end
 end
