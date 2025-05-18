@@ -28,12 +28,26 @@ return {
       use_libuv_file_watcher = true,
     },
     default_component_configs = {
+      icon = {
+        folder_closed = icons.Folder.Default,
+        folder_open = icons.Folder.Opened,
+        folder_empty = icons.Folder.Empty,
+        folder_empty_open = icons.Folder.EmptyOpened,
+      },
       modified = {
         symbol = icons.Git.Modified,
         highlight = 'NeoTreeModified',
       },
       indent = {
         indent_size = 2,
+        with_markers = false,
+        indent_marker = "│",
+        last_indent_marker = "└",
+        highlight = "NeoTreeIndentMarker",
+        with_expanders = true,
+        expander_collapsed = icons.Folder.ArrowClosed,
+        expander_expanded = icons.Folder.ArrowOpened,
+        expander_highlight = "NeoTreeExpander",
       },
       file_size = {
         enabled = true,
@@ -55,30 +69,20 @@ return {
         enabled = true,
         required_width = 140
       },
-    },
-    git_status = {
-      use_libuv_file_watcher = true,
-      symbols = {
-        added     = icons.Git.Add,
-        modified  = icons.Git.Modified,
-        deleted   = icons.Git.Deleted,
-        renamed   = icons.Git.Renamed,
-        untracked = icons.Git.Untracked,
-        ignored   = icons.Git.Ignored,
-        unstaged  = icons.Git.Unstaged,
-        staged    = icons.Git.Staged,
-        conflict  = icons.Git.Unmerged,
-      },
-      window = {
-        position = 'float',
-        mappings = {
-          ['A']  = 'git_add_all',
-          ['gu'] = 'git_unstage_file',
-          ['ga'] = 'git_add_file',
-          ['gr'] = 'git_revert_file',
-          ['gc'] = 'git_commit',
-          ['gp'] = 'git_push',
-          ['gg'] = 'git_commit_and_push',
+      git_status = {
+        align = 'right',
+        symbols = {
+          -- Change type
+          added     = icons.Git.Add,
+          modified  = icons.Git.Modified,
+          deleted   = icons.Git.Deleted,
+          renamed   = icons.Git.Renamed,
+          -- Status type
+          untracked = "",
+          ignored   = "",
+          unstaged  = icons.Git.Unstaged,
+          staged    = icons.Git.Staged,
+          conflict  = icons.Git.Unmerged,
         },
       },
     },

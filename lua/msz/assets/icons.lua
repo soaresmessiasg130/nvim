@@ -79,8 +79,8 @@ M.Diagnostics = {
 }
 
 M.Folder = {
-  ArrowClosed = " ",
-  ArrowOpened = " ",
+  ArrowClosed = "",
+  ArrowOpened = "",
   Default = " ",
   Opened = " ",
   Empty = " ",
@@ -90,21 +90,21 @@ M.Folder = {
 }
 
 M.Git = {
-  Add = "|",
+  Add = "+",
   Change = "|",
   ChangeDeleted = "~",
   Deleted = "-",
+  Modified = "",
+  Renamed = "",
   TopDeleted = "‾",
   BottomDeleted = "_",
   BranchAlt = "",
   Unmerged = "",
   Untracked = "󰄱",
-  UntrackedFilled = "",
-  Staged = "+",
-  Unstaged = "!",
+  UntrackedFilled = "󰄱",
+  Staged = "",
+  Unstaged = "󰄱",
   Ignored = "",
-  Modified = "",
-  Renamed = "",
 }
 
 M.KindIcons = {
