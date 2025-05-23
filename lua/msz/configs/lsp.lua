@@ -1,31 +1,19 @@
-local lspconfig = require('lspconfig')
-
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...)
-    vim.api.nvim_buf_set_keymap(bufnr, ...)
-  end
-
   local opts = {
     noremap = true,
     silent = true,
   }
 
-  buf_set_keymap("n", "<leader>lo", "<CMD>lua vim.lsp.buf.hover()<CR>", opts)
-  buf_set_keymap("n", "<leader>loo", "<CMD>lua vim.lsp.buf.signature_help()<CR>", opts)
-
-  buf_set_keymap("n", "<leader>li", "<CMD>lua vim.lsp.buf.definition()<CR>", opts)
-  buf_set_keymap("n", "<leader>lii", "<CMD>lua vim.lsp.buf.references()<CR>", opts)
-
-  buf_set_keymap("n", "<leader>lu", "<CMD>lua vim.lsp.diagnostic.on_diagnostic()<CR>", opts)
-  buf_set_keymap("n", "<leader>luu", "<CMD>lua vim.diagnostic.open_float(nil, { focus = false })<CR>", opts)
-
-  buf_set_keymap("n", "<leader>lyy", "<CMD>lua vim.lsp.buf.format({ async = false })<CR>", opts)
-  buf_set_keymap("n", "<leader>ly", "<CMD>lua vim.lsp.buf.rename()<CR>", opts)
-
-  buf_set_keymap("n", "<leader>lp", "<CMD>lua vim.lsp.buf.code_action()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lo", "<CMD>lua vim.lsp.buf.hover()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>loo", "<CMD>lua vim.lsp.buf.signature_help()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>li", "<CMD>lua vim.lsp.buf.definition()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lii", "<CMD>lua vim.lsp.buf.references()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lu", "<CMD>lua vim.lsp.diagnostic.on_diagnostic()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>luu", "<CMD>lua vim.diagnostic.open_float(nil, { focus = false })<CR>",
+    opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lyy", "<CMD>lua vim.lsp.buf.format({ async = false })<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ly", "<CMD>lua vim.lsp.buf.rename()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lp", "<CMD>lua vim.lsp.buf.code_action()<CR>", opts)
 
   if client.server_capabilities.documentFormattingProvider then
     if client.name == "eslint" or client.name == "typescript-tools" then
@@ -46,7 +34,6 @@ end
 local typescript_tools = require('typescript-tools')
 typescript_tools.setup({
   on_attach = on_attach,
-  capabilities = capabilities,
 })
 
 local lspconfig_windows = require('lspconfig.ui.windows')
@@ -59,7 +46,6 @@ local servers = {
     install_by_mason = true,
     ensure_installed = true,
     setup = {
-      capabilities = capabilities,
       on_attach = on_attach,
       settings = {
         Lua = {},
@@ -72,7 +58,6 @@ local servers = {
     install_by_mason = true,
     ensure_installed = true,
     setup = {
-      capabilities = capabilities,
       on_attach = on_attach,
       settings = {
         completion = {
@@ -87,7 +72,6 @@ local servers = {
     install_by_mason = true,
     ensure_installed = true,
     setup = {
-      capabilities = capabilities,
       on_attach = on_attach,
       enable_editorconfig_support = true,
       enable_ms_build_load_projects_on_demand = false,
@@ -108,7 +92,6 @@ local servers = {
     install_by_mason = true,
     ensure_installed = true,
     setup = {
-      capabilities = capabilities,
       on_attach = on_attach,
       settings = {
         completion = {
@@ -123,7 +106,6 @@ local servers = {
     install_by_mason = true,
     ensure_installed = true,
     setup = {
-      capabilities = capabilities,
       on_attach = on_attach,
       settings = {
         completion = {
@@ -138,7 +120,6 @@ local servers = {
     install_by_mason = true,
     ensure_installed = true,
     setup = {
-      capabilities = capabilities,
       on_attach = on_attach,
       settings = {
         completion = {
@@ -153,7 +134,6 @@ local servers = {
     install_by_mason = true,
     ensure_installed = true,
     setup = {
-      capabilities = capabilities,
       on_attach = on_attach,
       settings = {
         completion = {
@@ -168,7 +148,6 @@ local servers = {
     install_by_mason = true,
     ensure_installed = true,
     setup = {
-      capabilities = capabilities,
       on_attach = on_attach,
       settings = {
         completion = {
@@ -183,7 +162,6 @@ local servers = {
     install_by_mason = true,
     ensure_installed = true,
     setup = {
-      capabilities = capabilities,
       on_attach = on_attach,
       settings = {
         completion = {
@@ -198,7 +176,6 @@ local servers = {
     install_by_mason = true,
     ensure_installed = true,
     setup = {
-      capabilities = capabilities,
       on_attach = on_attach,
       settings = {
         completion = {
@@ -213,7 +190,6 @@ local servers = {
     install_by_mason = true,
     ensure_installed = true,
     setup = {
-      capabilities = capabilities,
       on_attach = on_attach,
       settings = {
         completion = {
@@ -228,7 +204,6 @@ local servers = {
     install_by_mason = true,
     ensure_installed = true,
     setup = {
-      capabilities = capabilities,
       on_attach = on_attach,
       settings = {
         completion = {
@@ -243,7 +218,6 @@ local servers = {
     install_by_mason = true,
     ensure_installed = true,
     setup = {
-      capabilities = capabilities,
       on_attach = on_attach,
       settings = {
         completion = {
@@ -258,7 +232,6 @@ local servers = {
     install_by_mason = true,
     ensure_installed = true,
     setup = {
-      capabilities = capabilities,
       on_attach = on_attach,
       settings = {},
     },
@@ -281,13 +254,32 @@ local function getServersThatEnsureInstalled()
   return res
 end
 
+vim.lsp.config('*', {
+  root_markers = { '.git' },
+  capabilities = {
+    textDocument = {
+      completion = {
+        completionItem = {
+          snippetSupport = true
+        }
+      },
+      semanticTokens = {
+        multilineTokenSupport = true
+      }
+    }
+  }
+})
+
 for _, server in pairs(servers) do
-  lspconfig[server["id"]].setup(server["setup"])
+  vim.lsp.config(server['id'], server['setup'])
+
+  vim.lsp.enable(server['id'])
 end
 
 local mason_lspconfig = require('mason-lspconfig')
 
 mason_lspconfig.setup({
+  automatic_enable = true,
   automatic_installation = false,
   handlers = nil,
   ensure_installed = getServersThatEnsureInstalled(),
