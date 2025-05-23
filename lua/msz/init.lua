@@ -15,7 +15,5 @@ require('msz.components.notify')
 -- Load plugins configurations
 require('msz.src.cmp')
 require('msz.src.lsp')
-require('msz.src.mason-lspconfig')
-require('msz.src.typescript-tools')
 require('msz.src.treesitter')
 require('msz.src.maps')
