@@ -13,7 +13,7 @@ require('msz.components.terminal')
 require('msz.components.notify')
 
 -- Load plugins configurations
-require('msz.src.cmp')
-require('msz.src.lsp')
-require('msz.src.treesitter')
-require('msz.src.maps')
+require('msz.configs.cmp')
+require('msz.configs.lsp')
+require('msz.configs.treesitter')
+require('msz.configs.maps')

@@ -13,8 +13,6 @@ local on_attach = function(client, bufnr)
     silent = true,
   }
 
-  print('HELLO 01')
-
   buf_set_keymap("n", "<leader>lo", "<CMD>lua vim.lsp.buf.hover()<CR>", opts)
   buf_set_keymap("n", "<leader>loo", "<CMD>lua vim.lsp.buf.signature_help()<CR>", opts)
 
@@ -28,8 +26,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<leader>ly", "<CMD>lua vim.lsp.buf.rename()<CR>", opts)
 
   buf_set_keymap("n", "<leader>lp", "<CMD>lua vim.lsp.buf.code_action()<CR>", opts)
-
-  print('HELLO 02')
 
   if client.server_capabilities.documentFormattingProvider then
     if client.name == "eslint" or client.name == "typescript-tools" then
