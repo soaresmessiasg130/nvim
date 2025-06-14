@@ -17,9 +17,6 @@ MapFunction("n", "<leader>z", "<CMD>set wrap!<CR>")
 MapFunction("i", "<C-s>", "<CMD>w<CR>")
 MapFunction("i", "<C-z>", "<CMD>u<CR>")
 
--- LSP
-MapFunction('n', '<leader>lpp', '<CMD>Trouble toggle lsp win.position=right<CR>')
-
 -- DapUI
 MapFunction("n", "<F5>", "<CMD>DapContinue<CR>")
 MapFunction("n", "<F6>", "<CMD>DapStepInto<CR>")
@@ -87,3 +84,21 @@ MapFunction('n', '<leader>lt', '<cmd>lua BpytopComponent()<CR>')
 
 -- LazyGit
 MapFunction('n', '<leader>lg', '<cmd>lua LazyGitComponent()<CR>')
+
+-- LSP
+local on_attach_buff = function (buff)
+  MapBuffFunction(buff, "n", "<leader>lo", "<CMD>lua vim.lsp.buf.hover()<CR>")
+  MapBuffFunction(buff, "n", "<leader>loo", "<CMD>lua vim.lsp.buf.signature_help()<CR>")
+  MapBuffFunction(buff, "n", "<leader>li", "<CMD>lua vim.lsp.buf.definition()<CR>")
+  MapBuffFunction(buff, "n", "<leader>lii", "<CMD>lua vim.lsp.buf.references()<CR>")
+  MapBuffFunction(buff, "n", "<leader>lu", "<CMD>lua vim.lsp.diagnostic.on_diagnostic()<CR>")
+  MapBuffFunction(buff, "n", "<leader>luu", "<CMD>lua vim.diagnostic.open_float(nil, { focus = false })<CR>")
+  MapBuffFunction(buff, "n", "<leader>lyy", "<CMD>lua vim.lsp.buf.format({ async = false })<CR>")
+  MapBuffFunction(buff, "n", "<leader>ly", "<CMD>lua vim.lsp.buf.rename()<CR>")
+  MapBuffFunction(buff, "n", "<leader>lp", "<CMD>lua vim.lsp.buf.code_action()<CR>")
+  MapFunction('n', '<leader>lpp', '<CMD>Trouble toggle lsp win.position=right<CR>')
+end
+
+return {
+  on_attach_buff = on_attach_buff
+}

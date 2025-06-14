@@ -1,19 +1,7 @@
-local on_attach = function(client, bufnr)
-  local opts = {
-    noremap = true,
-    silent = true,
-  }
+local mapConfig = require('msz.configs.maps')
 
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lo", "<CMD>lua vim.lsp.buf.hover()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>loo", "<CMD>lua vim.lsp.buf.signature_help()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>li", "<CMD>lua vim.lsp.buf.definition()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lii", "<CMD>lua vim.lsp.buf.references()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lu", "<CMD>lua vim.lsp.diagnostic.on_diagnostic()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>luu", "<CMD>lua vim.diagnostic.open_float(nil, { focus = false })<CR>",
-    opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lyy", "<CMD>lua vim.lsp.buf.format({ async = false })<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ly", "<CMD>lua vim.lsp.buf.rename()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lp", "<CMD>lua vim.lsp.buf.code_action()<CR>", opts)
+local on_attach = function(client, bufnr)
+  mapConfig.on_attach_buff(bufnr)
 
   if client.server_capabilities.documentFormattingProvider then
     if client.name == "eslint" or client.name == "typescript-tools" then
