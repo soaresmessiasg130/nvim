@@ -1,5 +1,6 @@
 local luasnip = require("luasnip")
 local cmp = require("cmp")
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -39,6 +40,7 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+  }, {
     { name = 'buffer' },
     { name = 'bufname' },
     { name = 'buffer-lines' },
@@ -82,3 +84,5 @@ cmp.setup.cmdline(':', {
     disallow_prefix_unmatching = false
   },
 })
+
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
