@@ -10,19 +10,8 @@ return {
   {
     'neovim/nvim-lspconfig',
     config = function()
-      local icons = require('msz.assets.icons')
-
-      vim.fn.sign_define('DiagnosticSignError', { text = icons.Diagnostics.Error, texthl = 'DiagnosticSignError' })
-      vim.fn.sign_define('DiagnosticSignWarn', { text = icons.Diagnostics.Warn, texthl = 'DiagnosticSignWarn' })
-      vim.fn.sign_define('DiagnosticSignInfo', { text = icons.Diagnostics.Info, texthl = 'DiagnosticSignInfo' })
-      vim.fn.sign_define('DiagnosticSignHint', { text = icons.Diagnostics.Hint, texthl = 'DiagnosticSignHint' })
-
-      vim.diagnostic.config({
-        virtual_text = false,
-        float = {
-          border = 'rounded',
-        }
-      })
+      -- UI configuration is now handled in msz.lsp.handlers, 
+      -- which is called by msz.configs.lsp
     end
   },
   { 'hrsh7th/cmp-nvim-lsp' },
