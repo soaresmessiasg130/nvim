@@ -45,10 +45,6 @@ MapFunction("n", "<leader>th", "<CMD>ToggleTerm size=10 direction=horizontal<CR>
 MapFunction("n", "<leader>tv", "<CMD>ToggleTerm size=40 direction=vertical<CR>")
 MapFunction("n", "<leader>tf", "<CMD>ToggleTerm direction=float<CR>")
 
--- Markdown Preview
-MapFunction("n", "<leader>m", "<CMD>MarkdownPreview<CR>")
-MapFunction("n", "<leader>mn", "<CMD>MarkdownPreviewStop<CR>")
-
 -- Window Navigation
 MapFunction("n", "<C-h>", "<C-w>h")
 MapFunction("n", "<C-l>", "<C-w>l")
@@ -80,25 +76,25 @@ MapFunction("n", "<leader>ko", "<CMD>foldopen<CR>")
 MapFunction("n", "<leader>ho", "<CMD>UndotreeToggle<CR>")
 
 -- Bpytop
-MapFunction('n', '<leader>lt', '<cmd>lua BpytopComponent()<CR>')
+MapFunction("n", "<leader>lt", "<cmd>lua BpytopComponent()<CR>")
 
 -- LazyGit
-MapFunction('n', '<leader>lg', '<cmd>lua LazyGitComponent()<CR>')
+MapFunction("n", "<leader>lg", "<cmd>lua LazyGitComponent()<CR>")
 
 -- LSP
-local on_attach_buff = function (buff)
-  MapBuffFunction(buff, "n", "<leader>lo", "<CMD>lua vim.lsp.buf.hover()<CR>")
-  MapBuffFunction(buff, "n", "<leader>loo", "<CMD>lua vim.lsp.buf.signature_help()<CR>")
-  MapBuffFunction(buff, "n", "<leader>li", "<CMD>lua vim.lsp.buf.definition()<CR>")
-  MapBuffFunction(buff, "n", "<leader>lii", "<CMD>lua vim.lsp.buf.references()<CR>")
-  MapBuffFunction(buff, "n", "<leader>lu", "<CMD>lua vim.lsp.diagnostic.on_diagnostic()<CR>")
-  MapBuffFunction(buff, "n", "<leader>luu", "<CMD>lua vim.diagnostic.open_float(nil, { focus = false })<CR>")
-  MapBuffFunction(buff, "n", "<leader>lyy", "<CMD>lua vim.lsp.buf.format({ async = false })<CR>")
-  MapBuffFunction(buff, "n", "<leader>ly", "<CMD>lua vim.lsp.buf.rename()<CR>")
-  MapBuffFunction(buff, "n", "<leader>lp", "<CMD>lua vim.lsp.buf.code_action()<CR>")
-  MapFunction('n', '<leader>lpp', '<CMD>Trouble toggle lsp win.position=right<CR>')
+local on_attach_buff = function(buff)
+	MapBuffFunction(buff, "n", "<leader>lo", "<CMD>lua vim.lsp.buf.hover()<CR>")
+	MapBuffFunction(buff, "n", "<leader>loo", "<CMD>lua vim.lsp.buf.signature_help()<CR>")
+	MapBuffFunction(buff, "n", "<leader>li", "<CMD>lua vim.lsp.buf.definition()<CR>")
+	MapBuffFunction(buff, "n", "<leader>lii", "<CMD>lua vim.lsp.buf.references()<CR>")
+	MapBuffFunction(buff, "n", "<leader>lu", "<CMD>lua vim.lsp.diagnostic.on_diagnostic()<CR>")
+	MapBuffFunction(buff, "n", "<leader>luu", "<CMD>lua vim.diagnostic.open_float(nil, { focus = false })<CR>")
+	MapBuffFunction(buff, "n", "<leader>lyy", "<CMD>lua vim.lsp.buf.format({ async = false })<CR>")
+	MapBuffFunction(buff, "n", "<leader>ly", "<CMD>lua vim.lsp.buf.rename()<CR>")
+	MapBuffFunction(buff, "n", "<leader>lp", "<CMD>lua vim.lsp.buf.code_action()<CR>")
+	MapFunction("n", "<leader>lpp", "<CMD>Trouble toggle lsp win.position=right<CR>")
 end
 
 return {
-  on_attach_buff = on_attach_buff
+	on_attach_buff = on_attach_buff,
 }
