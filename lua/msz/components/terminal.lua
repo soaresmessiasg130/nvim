@@ -13,7 +13,7 @@ function TerminalComponent(props)
     on_open = function(term)
       vim.cmd('startinsert!')
 
-      MapBuffFunction(term.bufnr, 'n', 'q', '<cmd>close<CR>')
+      MapBuffFunction(term.bufnr, 'n', 'q', '<cmd>close<CR>', "Close Terminal")
     end,
     on_close = function()
       vim.cmd('startinsert!')
