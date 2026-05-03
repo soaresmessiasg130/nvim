@@ -4,6 +4,11 @@ return {
   { 'akinsho/git-conflict.nvim', version = "*", config = true },
   {
     'lewis6991/gitsigns.nvim',
+    keys = {
+      { "<leader>ni", "<CMD>Gitsigns preview_hunk<CR>", desc = "Preview Hunk" },
+      { "<leader>no", "<CMD>Gitsigns next_hunk<CR>", desc = "Next Hunk" },
+      { "<leader>np", "<CMD>Gitsigns prev_hunk<CR>", desc = "Prev Hunk" },
+    },
     opts = {
       signs                        = {
         add          = { text = icons.Git.Add },

@@ -8,6 +8,13 @@ return {
     'nvim-tree/nvim-web-devicons',
     'MunifTanjim/nui.nvim',
   },
+  keys = {
+    { "<leader>jj", "<CMD>Neotree toggle<CR>", desc = "Toggle Neotree" },
+    { "<leader>ju", "<CMD>Neotree filesystem position=right<CR>", desc = "Neotree Filesystem" },
+    { "<leader>ji", "<CMD>Neotree buffers position=right<CR>", desc = "Neotree Buffers" },
+    { "<leader>jo", "<CMD>Neotree git_status position=right<CR>", desc = "Neotree Git Status" },
+    { "<leader>jp", "<CMD>Neotree document_symbols position=right<CR>", desc = "Neotree Symbols" },
+  },
   opts = {
     close_if_last_window = true,
     popup_border_style = 'rounded',
