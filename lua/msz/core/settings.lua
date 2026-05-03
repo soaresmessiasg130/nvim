@@ -1,82 +1,79 @@
-local global = vim.g
-local o = vim.o
-
 -- <leader>
-global.mapleader = " "
-global.maplocalleader = " "
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- line numbers
-o.number = true
-o.relativenumber = true
+vim.o.number = true
+vim.o.relativenumber = true
 
 -- tabs && indentation
-o.tabstop = 2
-o.softtabstop = 2
-o.shiftwidth = 2
-o.expandtab = true
-o.autoindent = true
-o.breakindent = true
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+vim.o.autoindent = true
+vim.o.breakindent = true
 
 -- search
-o.ignorecase = true
-o.smartcase = true
-o.tagcase = "followscs"
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.tagcase = "followscs"
 
 -- cursor
-o.cursorline = true
-o.cursorbind = false
-o.guicursor =
+vim.o.cursorline = true
+vim.o.cursorbind = false
+vim.o.guicursor =
 	"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 
 -- appearance
-o.termguicolors = true
-o.signcolumn = "yes:2"
-o.syntax = "on"
-o.ruler = true
+vim.o.termguicolors = true
+vim.o.signcolumn = "yes:2"
+vim.o.syntax = "on"
+vim.o.ruler = true
 
 -- buffer
-o.title = true
-o.hidden = true
+vim.o.title = true
+vim.o.hidden = true
 
 -- words
 vim.opt.iskeyword:append("-")
-global.backspace = "indent,eol,start,nostop"
-o.clipboard = "unnamedplus"
+vim.g.backspace = "indent,eol,start,nostop"
+vim.o.clipboard = "unnamedplus"
 
 -- split window
-o.splitright = true
-global.splitbellow = true
-o.splitkeep = "screen"
-o.startofline = true
+vim.o.splitright = true
+vim.g.splitbellow = true
+vim.o.splitkeep = "screen"
+vim.o.startofline = true
 
 -- navigation
-o.scrolloff = 3
-global.mouse = "a"
+vim.o.scrolloff = 3
+vim.g.mouse = "a"
 
 -- file
-o.swapfile = false
-global.encoding = "utf-8"
+vim.o.swapfile = false
+vim.g.encoding = "utf-8"
 
 -- command bar
-global.wildmenu = true
-o.cmdheight = 0
-global.showcmd = false
-global.showcmdloc = "statusline"
+vim.g.wildmenu = true
+vim.o.cmdheight = 0
+vim.g.showcmd = false
+vim.g.showcmdloc = "statusline"
 
 -- edditing
-global.ttimeout = true
-global.ttimeoutlen = 50
-global.updatetime = 4000
-o.confirm = true
+vim.g.ttimeout = true
+vim.g.ttimeoutlen = 50
+vim.g.updatetime = 4000
+vim.o.confirm = true
 
 -- search
-global.showmatch = true
-global.incsearch = true
+vim.g.showmatch = true
+vim.g.incsearch = true
 
 -- fold
-o.foldmethod = "expr"
-o.foldexpr = "nvim_treesitter#foldexpr()"
-o.foldlevel = 4
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldlevel = 4
 
 -- ai
 vim.opt.laststatus = 3
