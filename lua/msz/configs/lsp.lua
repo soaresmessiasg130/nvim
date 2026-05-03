@@ -2,21 +2,6 @@ local mapConfig = require('msz.configs.maps')
 
 local on_attach = function(client, bufnr)
   mapConfig.on_attach_buff(bufnr)
-
-  if client.server_capabilities.documentFormattingProvider then
-    if client.name == "eslint" or client.name == "typescript-tools" then
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        command = "EslintFixAll",
-        buffer = bufnr,
-      })
-    else
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        group = vim.api.nvim_create_augroup("Format", { clear = true }),
-        buffer = bufnr,
-        callback = function() vim.lsp.buf.format() end,
-      })
-    end
-  end
 end
 
 local typescript_tools = require('typescript-tools')

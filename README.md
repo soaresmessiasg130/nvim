@@ -1,4 +1,5 @@
 # nvim
+
 My nvim configuration
 
 ## requirements
@@ -9,7 +10,7 @@ My nvim configuration
 - ripgrep
 - fd-find
 - neovim(npm)
-- @styled/typescript-styled-plugin(npm) 
+- @styled/typescript-styled-plugin(npm)
 - typescript-styled-plugin(npm)
 - pynvim(pip)
 - cairosvg(pip)
@@ -30,8 +31,8 @@ If you have an GUI, install this:
 
 ## install development packages
 
-- :MasonInstall netcoredbg eslint_d prettier prettierd stylua tree-sitter-cli xmlformatter
+- :MasonInstall netcoredbg eslint_d prettier prettierd stylua tree-sitter-cli xmlformatter typescript-language-server
 
 ## post installation
 
-- Terminal Plugin: on Terminal plugin config file, change to your shell: ```bash``` or ```zsh``` or ```fish```, etc.
+- Terminal Plugin: on Terminal plugin config file, change to your shell: `bash` or `zsh` or `fish`, etc.
