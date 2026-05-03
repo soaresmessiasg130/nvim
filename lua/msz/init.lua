@@ -12,7 +12,5 @@ require('msz.components.lazygit')
 require('msz.components.terminal')
 require('msz.components.notify')
 
--- Load plugins configurations
-require('msz.configs.cmp')
-require('msz.configs.lsp')
+-- Load mappings (LSP and CMP are now lazy-loaded in their plugin specs)
 require('msz.configs.maps')

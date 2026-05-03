@@ -31,6 +31,9 @@ require('lazy').setup({
   spec = {
     { import = 'msz.plugins' },
   },
+  defaults = {
+    lazy = true,
+  },
   install = { colorscheme = { 'habamax' } },
   checker = { enabled = true },
   ui = {
