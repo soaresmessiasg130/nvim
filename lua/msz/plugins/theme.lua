@@ -36,7 +36,16 @@ return {
         -- miscs = {}, -- Uncomment to turn off hard-coded styles
       },
       color_overrides = {},
-      custom_highlights = {},
+      custom_highlights = function(colors)
+        return {
+          red = { bg = "none", fg = colors.red },
+          pink = { bg = "none", fg = colors.pink },
+          blue = { bg = "none", fg = colors.blue },
+          green = { bg = "none", fg = colors.green },
+          yellow = { bg = "none", fg = colors.yellow },
+          orange = { bg = "none", fg = colors.orange },
+        }
+      end,
       default_integrations = true,
       integrations = {
         cmp = true,
